@@ -1,4 +1,4 @@
-package org.mql.java.xml.dom;
+package org.mql.java.parsers.xml;
 
 import java.util.LinkedList;
 

@@ -2,34 +2,29 @@ package org.mql.java.models;
 
 import java.util.List;
 
-public class Enumeration {
-	private String name;
+public class Enumeration extends ModelEntity {
+
 	private List<Method> methods;
 	private String parent;
-	private List<Class> interfacesImp;
-	protected List<Property> properties;
+	//private List<Class> interfacesImp;
 	private List<Attribute> attributes;
 
-	public Enumeration() {
-		// TODO Auto-generated constructor stub
+	
+	
+	public Enumeration(String name) {
+		super(name);
+	
 	}
 	
 
 	public Enumeration(String name, List<Method> methods, String parent, List<Class> interfacesImp,
 			List<Property> properties, List<Attribute> attributes) {
-		super();
-		this.name = name;
+		super(name);
+		
 		this.methods = methods;
 		this.parent = parent;
-		this.interfacesImp = interfacesImp;
-		this.properties = properties;
+
 		this.attributes = attributes;
-	}
-
-
-	public Enumeration(String name) {
-		super();
-		this.name = name;
 	}
 
 
@@ -49,14 +44,6 @@ public class Enumeration {
 		attributes.remove(a);
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public List<Method> getMethods() {
 		return methods;
 	}
@@ -73,21 +60,21 @@ public class Enumeration {
 		this.parent = parent;
 	}
 
-	public List<Class> getInterfacesImp() {
-		return interfacesImp;
-	}
-
-	public void setInterfacesImp(List<Class> interfacesImp) {
-		this.interfacesImp = interfacesImp;
-	}
-
-	public List<Property> getProperties() {
-		return properties;
-	}
-
-	public void setProperties(List<Property> properties) {
-		this.properties = properties;
-	}
+//	public List<Class> getInterfacesImp() {
+//		return interfacesImp;
+//	}
+//
+//	public void setInterfacesImp(List<Class> interfacesImp) {
+//		this.interfacesImp = interfacesImp;
+//	}
+//
+//	public List<Property> getProperties() {
+//		return properties;
+//	}
+//
+//	public void setProperties(List<Property> properties) {
+//		this.properties = properties;
+//	}
 
 	public List<Attribute> getAttributes() {
 		return attributes;

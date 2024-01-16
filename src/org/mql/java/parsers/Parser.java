@@ -1,7 +1,9 @@
-package org.mql.java.xml.dom;
+package org.mql.java.parsers;
 
 import java.io.File;
 
 public interface Parser<T> {
     T parse(File file);
+
+
 }

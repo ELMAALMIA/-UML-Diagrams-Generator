@@ -1,9 +1,9 @@
-package org.mql.java.xml.dom.parserImp;
+package org.mql.java.parsers.parserImp;
 
 import java.io.File;
 import java.util.logging.Logger;
 
-import org.mql.java.xml.dom.Parser;
+import org.mql.java.parsers.Parser;
 
 public class PackageParser implements Parser{
 

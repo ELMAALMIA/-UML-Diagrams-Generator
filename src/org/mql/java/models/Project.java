@@ -41,11 +41,20 @@ public class Project {
 	public void setPath(String path) {
 		this.path = path;
 	}
+	public static String getAbsolutePath() {
+		if(project != null)
+			return project.getPath();
+		return "";
+	}
 	@Override
 	public String toString() {
 		return "Project [getPackagesList()=" + getPackagesList() + ", getRelations()=" + getRelations() + ", getName()="
 				+ getName() + ", getPath()=" + getPath() + "]";
 	}
+	
+	private static Project project;
+	
+	
 	
 
 }

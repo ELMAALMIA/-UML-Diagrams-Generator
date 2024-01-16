@@ -1,6 +1,5 @@
 package org.mql.java.models;
 
-import java.lang.reflect.Type;
 
 import javax.management.relation.RelationType;
 

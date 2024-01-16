@@ -3,30 +3,30 @@ package org.mql.java.models;
 import org.mql.java.enumerations.RelationType;
 
 public class Relation {
-	private Model fils;
-	private Model parent;
+	private ModelEntity fils;
+	private ModelEntity parent;
 	private RelationType type;
 	public Relation() {
 	
 	}
 	
-	public Relation(Model fils, Model parent, RelationType type) {
+	public Relation(ModelEntity fils, ModelEntity parent, RelationType type) {
 		super();
 		this.fils = fils;
 		this.parent = parent;
 		this.type = type;
 	}
 
-	public Model getFils() {
+	public ModelEntity getFils() {
 		return fils;
 	}
-	public void setFils(Model fils) {
+	public void setFils(ModelEntity fils) {
 		this.fils = fils;
 	}
-	public Model getParent() {
+	public ModelEntity getParent() {
 		return parent;
 	}
-	public void setParent(Model parent) {
+	public void setParent(ModelEntity parent) {
 		this.parent = parent;
 	}
 	public RelationType getType() {

@@ -2,22 +2,17 @@ package org.mql.java.models;
 
 import java.util.List;
 
-public class Class {
-	private String name;
+public class Class  extends ModelEntity{
+	
 	private List<Attribute> attributes;
 	private List<Method> methods;
-	private String parent;
-	private List<Class> interfacesImp;
+
+	private List<String> interfacesImp;
 	protected List<Property> properties;
-	public Class() {
-		
+	public Class(String name) {
+	super(name);
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
 	public List<Attribute> getAttributes() {
 		return attributes;
 	}
@@ -27,20 +22,23 @@ public class Class {
 	public List<Method> getMethods() {
 		return methods;
 	}
-	public List<Class> getInterfacesImp() {
+	public List<String> getInterfacesImp() {
 		return interfacesImp;
 	}
-	public void setInterfacesImp(List<Class> interfacesImp) {
+	public void setInterfacesImp(List<String> interfacesImp) {
 		this.interfacesImp = interfacesImp;
 	}
 	public void setMethods(List<Method> methods) {
 		this.methods = methods;
 	}
-	public String getParent() {
-		return parent;
+	
+	public void addInterface(String nameIter) {
+	interfacesImp.add(nameIter);
+		
 	}
-	public void setParent(String parent) {
-		this.parent = parent;
+
+public void addpropertie(Property p){
+	properties.add(p);
 	}
 
 }
