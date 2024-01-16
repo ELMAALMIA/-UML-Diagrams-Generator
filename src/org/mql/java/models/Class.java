@@ -8,6 +8,7 @@ public class Class {
 	private List<Method> methods;
 	private String parent;
 	private List<Class> interfacesImp;
+	protected List<Property> properties;
 	public Class() {
 		
 	}
