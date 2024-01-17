@@ -1,16 +1,17 @@
 package org.mql.java.models;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Collection;
 
 import org.mql.java.enumerations.AccessModifier;
 
-public class Field extends Property {
+public class FieldModel extends PropertyModel {
 
 	private Multiplicity multiplicity;
 
 
-	public Field(java.lang.reflect.Field f) {
+	public FieldModel(Field f) {
 		super(f.getName());
 		setType(f.getType().getName());
 		setNiveauVisiblity(determineVisibility(f.getModifiers()));

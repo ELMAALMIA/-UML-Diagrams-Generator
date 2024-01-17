@@ -2,15 +2,15 @@ package org.mql.java.models;
 
 import org.mql.java.enumerations.RelationType;
 
-public class Relation {
+public class RelationModel {
 	private ModelEntity fils;
 	private ModelEntity parent;
 	private RelationType type;
-	public Relation() {
+	public RelationModel() {
 	
 	}
 	
-	public Relation(ModelEntity fils, ModelEntity parent, RelationType type) {
+	public RelationModel(ModelEntity fils, ModelEntity parent, RelationType type) {
 		super();
 		this.fils = fils;
 		this.parent = parent;

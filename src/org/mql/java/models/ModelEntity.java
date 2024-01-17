@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class ModelEntity {
 	private String name;
-	private List<Property> properties;
+	private List<PropertyModel> properties;
 	private String parent;
 	public ModelEntity(String name) {
 		super();
@@ -19,13 +19,13 @@ public class ModelEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Property> getProperties() {
+	public List<PropertyModel> getProperties() {
 		return properties;
 	}
-	public void setProperties(List<Property> properties) {
+	public void setProperties(List<PropertyModel> properties) {
 		this.properties = properties;
 	}
-	public void addProperties(Property p) {
+	public void addProperties(PropertyModel p) {
 		properties.add(p);
 	}
 	public String getParent() {

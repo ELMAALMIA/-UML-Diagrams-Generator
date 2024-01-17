@@ -2,49 +2,43 @@ package org.mql.java.models;
 
 import java.util.List;
 import java.util.Vector;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.Parameter;
 
 import org.mql.java.enumerations.AccessModifier;
 
-public class Method extends Property {
-	private List<Parameter> parameters;
+public class MethodModel  {
+	private List<ParameterModel> parameters;
 	private int modifier;
+	private AccessModifier visibility;
 
 //	private boolean isConstruct;
-//	private String typereturn;
-	public Method(java.lang.reflect.Method m) {
+	private String typeReturn;
+	public MethodModel(Method m) {
 
-		super(m.getName());
+		
 		this.parameters = new Vector<>();
 		addAll(m.getParameters());
 		 this.modifier = m.getModifiers();
-		setNiveauVisiblity( determineVisibility(modifier));
+		
 
 	}
 
-	private void addAll(java.lang.reflect.Parameter[] parametersadd) {
-		for (java.lang.reflect.Parameter parameter : parametersadd) {
-			parameters.add(new Parameter(parameter.getType().getName()));
+	private void addAll(Parameter[] parametersadd) {
+		for (Parameter parameter : parametersadd) {
+			parameters.add(new ParameterModel(parameter.getType().getName()));
 		}
 
 	}
 
-	private AccessModifier determineVisibility(int mod) {
-		if (Modifier.isPublic(mod)) {
-			return AccessModifier.PUBLIC;
-		} else if (Modifier.isPrivate(mod)) {
-			return AccessModifier.PRIVATE;
-		} else if (Modifier.isProtected(mod)) {
-			return AccessModifier.PROTECTED;
-		}
-		return AccessModifier.PACKAGE; 
-		}
 
-	public List<Parameter> getParameters() {
+
+	public List<ParameterModel> getParameters() {
 		return parameters;
 	}
 
-	public void setParameters(List<Parameter> parameters) {
+	public void setParameters(List<ParameterModel> parameters) {
 		this.parameters = parameters;
 	}
 

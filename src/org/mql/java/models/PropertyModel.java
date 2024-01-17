@@ -1,17 +1,17 @@
 package org.mql.java.models;
 
-import java.lang.module.ModuleDescriptor.Exports.Modifier;
+
 
 import org.mql.java.enumerations.AccessModifier;
 
-public class Property {
+public class PropertyModel {
 	private String name;
 	private AccessModifier niveauVisiblity;
 	private String type;
 	private boolean isStatic;
 	private boolean isFinal;
 
-	public Property(String name) {
+	public PropertyModel(String name) {
 		setName(name);
 	}
 
