@@ -47,5 +47,15 @@ public class InterfaceModel {
 		this.methods = methods;
 	}
 	
+	
+	
+	@Override
+	public String toString() {
+		String s ="";
+		for(MethodModel model : methods) s+="\n\t\t\t"+model; 
+
+		return " Interface " + getInterfaceName()+s;
+	}
+	
 
 }

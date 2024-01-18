@@ -6,7 +6,7 @@ import org.mql.java.enumerations.AccessModifier;
 
 
 public class VisibilityUtils {
-	private AccessModifier determineVisibility(int mod) {
+	public static  AccessModifier determineVisibility(int mod) {
 		if (Modifier.isPublic(mod)) {
 			return AccessModifier.PUBLIC;
 		} else if (Modifier.isPrivate(mod)) {

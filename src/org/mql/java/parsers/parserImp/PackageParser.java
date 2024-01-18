@@ -10,6 +10,7 @@ import org.mql.java.models.ClassModel;
 import org.mql.java.models.Enumeration;
 import org.mql.java.models.InterfaceModel;
 import org.mql.java.models.PackageModel;
+import org.mql.java.models.RelationModel;
 import org.mql.java.utils.ClassesLoaderUtils;
 
 public class PackageParser {
@@ -21,6 +22,7 @@ public class PackageParser {
 	private List<Enumeration> enumerations;
 	private List<AnnotationModel> annotations;
 	private PackageModel packageModel;
+    private List<RelationModel> relations;
 
 	public PackageParser(String path, String packageName) {
 		this.packageName = packageName;
@@ -30,6 +32,7 @@ public class PackageParser {
 		enumerations = new Vector<>();
 		annotations = new Vector<>();
 		packageModel = new PackageModel(packageName);
+		relations = new Vector<>();
 
 		String packagePath = packageName.replace(".", "/");
 
@@ -64,8 +67,9 @@ public class PackageParser {
 		packageModel.setInterfaces(interfaces);
 		packageModel.setEnumerations(enumerations);
 		packageModel.setAnnotations(annotations);
-
 		packageModel.setPackages(packages);
+		packageModel.setRelationst(relations);
+		
 
 	}
 

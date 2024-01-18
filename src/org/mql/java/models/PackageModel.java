@@ -10,9 +10,11 @@ public class PackageModel {
 	private List<InterfaceModel> interfaces;
 	private List<Enumeration> enumerations;
 	private List<AnnotationModel> annotations;
+	private List<RelationModel> relations;
+	
 
 	public PackageModel(String name) {
-	this.name=name;
+		this.name = name;
 	}
 
 	public String getName() {
@@ -62,35 +64,42 @@ public class PackageModel {
 	public void setAnnotations(List<AnnotationModel> annotations) {
 		this.annotations = annotations;
 	}
-	
-	
+
+	public List<RelationModel> getRelations() {
+		return relations;
+	}
+
+	public void setRelationst(List<RelationModel> relationsList) {
+		this.relations = relationsList;
+	}
+
+	public void addRelation(RelationModel relation) {
+		this.relations.add(relation);
+	}
 
 	@Override
 	public String toString() {
-		String out = "";
+		String s = "";
 
-		out += "Package : " + name + "\n";
+		s += "Package : " + name + "\n";
 
 		for (PackageModel p : packages) {
-			out += "\t" + p + "\n";
+			s += "\t" + p + "\n";
 		}
 		for (ClassModel c : classes) {
-			out += "\t" + c + "\n";
+			s += "\t" + c + "\n";
 		}
 		for (AnnotationModel a : annotations) {
-			out += "\t" + a + "\n";
+			s += "\t" + a + "\n";
 		}
 		for (InterfaceModel i : interfaces) {
-			out += "\t" + i + "\n";
+			s+= "\t" + i + "\n";
 		}
 		for (Enumeration e : enumerations) {
-			out += "\t" + e + "\n";
+			s += "\t" + e + "\n";
 		}
 
-		return out;
+		return s;
 	}
-
-
-
 
 }

@@ -32,11 +32,13 @@ public class ProjectParser {
                     }
                 }
             }
+          
         } else {
             System.out.println("Le chemin du projet est invalide ou n'est pas un répertoire.");
         }
 
         project.setPackagesList(packages);
+        new RelationParser(project);
     }
 
     public ProjectModel getProject() {

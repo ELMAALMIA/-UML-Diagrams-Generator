@@ -36,7 +36,7 @@ public class ClassModel  implements ModelInterface{
         }
 
         for (Constructor<?> constructor : c.getDeclaredConstructors()) {
-            this.Constructors.add(new ConstructorModel(constructor));
+            this.Constructors.add(new ConstructorModel(constructor,c.getSimpleName()));
         }
 
         for (Class<?> interfaceClass : c.getInterfaces()) {
@@ -57,7 +57,14 @@ public class ClassModel  implements ModelInterface{
 
 	@Override
 	public String toString() {
-		return "Class  " + getName();
+		String s ="\n\t\t\t--------------------------------------------------"; 
+		for(FieldModel f : filedes) s+="\n\t\t\t"+f; 
+		s+="\n\t\t\t--------------------------------------------------"; 
+		for(MethodModel methodModel : methods) s+="\n\t\t\t"+methodModel; 
+		for(ConstructorModel c : Constructors) s+="\n\t\t\t"+c;
+		s+="\n\t\t\t--------------------------------------------------"; 
+		return "Class  " + getName() + s;
+		
 	}
 
 @Override

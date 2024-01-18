@@ -58,11 +58,11 @@ public class ProjectModel {
 
     @Override
     public String toString() {
-        String out = "";
-        for (PackageModel p : packagesList) {
-            out += p + "\n";
+        String string = "";
+        for (PackageModel packageModel : packagesList) {
+            string += packageModel + "\n";
         }
-        return out;
+        return string;
     }
 
    

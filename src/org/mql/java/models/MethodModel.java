@@ -7,8 +7,10 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 
 import org.mql.java.enumerations.AccessModifier;
+import org.mql.java.utils.VisibilityUtils;
 
 public class MethodModel  {
+	public String name;
 	private List<ParameterModel> parameters;
 	private int modifier;
 	private AccessModifier visibility;
@@ -16,18 +18,18 @@ public class MethodModel  {
 //	private boolean isConstruct;
 	private String typeReturn;
 	public MethodModel(Method m) {
-
 		
+		this.name = m.getName();
 		this.parameters = new Vector<>();
 		addAll(m.getParameters());
 		 this.modifier = m.getModifiers();
-		
-
+		 this.visibility = VisibilityUtils.determineVisibility(this.modifier);
+this.typeReturn =m.getReturnType().getSimpleName();
 	}
 
 	private void addAll(Parameter[] parametersadd) {
 		for (Parameter parameter : parametersadd) {
-			parameters.add(new ParameterModel(parameter.getType().getName()));
+			parameters.add(new ParameterModel(parameter));
 		}
 
 	}
@@ -61,10 +63,47 @@ public class MethodModel  {
 //	public void setTypereturn(String typereturn) {
 //		this.typereturn = typereturn;
 //	}
+	
 
+
+	public String getName() {
+		return name;
+	}
+
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public AccessModifier getVisibility() {
+		return visibility;
+	}
+
+	public void setVisibility(AccessModifier visibility) {
+		this.visibility = visibility;
+	}
+
+	public String getTypeReturn() {
+		return typeReturn;
+	}
+
+	public void setTypeReturn(String typeReturn) {
+		this.typeReturn = typeReturn;
+	}
 	@Override
 	public String toString() {
-
-		return super.toString();
+		String s ="";
+		
+	s= getVisibility().getSymbol() + " "+getName();
+	s+="(";
+	for(int i=0 ; i<=parameters.size()-1;i++) {
+		 s+= parameters.get(i);
+		 if(i!=parameters.size()-1) s+=", ";
 	}
+	s+=") "+ " : "+getTypeReturn();
+	
+	return s;
+	}
+
+	
 }
