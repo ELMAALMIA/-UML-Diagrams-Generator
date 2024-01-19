@@ -24,6 +24,7 @@ import org.mql.java.utils.ClassesLoaderUtils;
 public class ClassParser {
     private ClassModel classModel;
     private String className ;
+   
 
     public ClassParser(Class<?> class1) {
         //loadInheritanceChain(class1);

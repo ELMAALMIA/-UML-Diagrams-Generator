@@ -7,6 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
+import org.mql.java.parsers.parserImp.RelationParser;
+
 public class ClassModel implements ModelInterface {
 	private String name;
 	private List<FieldModel> filedes;
@@ -16,6 +18,7 @@ public class ClassModel implements ModelInterface {
 	private List<String> inheritanceChain;
 	protected List<PropertyModel> properties;
 	private String parent;
+	private List<RelationModel> relations;
 
 	public ClassModel(Class<?> c) {
 		this.filedes = new Vector<>();
@@ -25,6 +28,7 @@ public class ClassModel implements ModelInterface {
 		this.inheritanceChain = new Vector<>();
 		this.properties = new Vector<>();
 		this.name = c.getSimpleName();
+		this.relations = new Vector<>();
 		this.parent = (c.getSuperclass() != null) ? c.getSuperclass().getName() : null;
 
 		for (Field field : c.getDeclaredFields()) {
@@ -48,6 +52,7 @@ public class ClassModel implements ModelInterface {
 			inheritanceChain.add(current.getName());
 			current = current.getSuperclass();
 		}
+
 	}
 
 	public String getName() {
@@ -68,6 +73,18 @@ public class ClassModel implements ModelInterface {
 
 	public List<ConstructorModel> getConstructors() {
 		return Constructors;
+	}
+
+	public void setRelations(List<RelationModel> relations) {
+		this.relations = relations;
+	}
+
+	public List<RelationModel> getRelations() {
+		return relations;
+	}
+
+	private void addAll(List<RelationModel> relations) {
+		relations.addAll(relations);
 	}
 
 	public void setConstructors(List<ConstructorModel> constructors) {
@@ -125,7 +142,7 @@ public class ClassModel implements ModelInterface {
 		for (MethodModel methodModel : methods)
 			s += "\n\t\t\t" + methodModel;
 		s += "\n\t\t\t--------------------------------------------------";
-		return "Class  " + getName() + s;
+		return "Class :  " + getName() + s+" ";
 
 	}
 

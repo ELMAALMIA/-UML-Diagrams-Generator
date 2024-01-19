@@ -3,7 +3,6 @@ package org.mql.java.models;
 public class AnnotationModel {
 private String name;
 	public AnnotationModel(Class<?> c) {
-		// TODO Auto-generated constructor stub
 	name = c.getSimpleName();
 	}
 	

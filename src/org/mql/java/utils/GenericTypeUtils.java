@@ -1,6 +1,6 @@
 package org.mql.java.utils;
 
-import java.lang.reflect.Field;
+
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
@@ -10,8 +10,8 @@ public class GenericTypeUtils {
             ParameterizedType pType = (ParameterizedType) genericType;
             Type[] fieldArgTypes = pType.getActualTypeArguments();
             if (fieldArgTypes.length > 0) {
-                String fullTypeName = fieldArgTypes[0].getTypeName();
-                return StringUtils.getSimpleName(fullTypeName); 
+                String typeName = fieldArgTypes[0].getTypeName();
+                return StringUtils.getSimpleName(typeName); 
             }
         }
         return ""; 

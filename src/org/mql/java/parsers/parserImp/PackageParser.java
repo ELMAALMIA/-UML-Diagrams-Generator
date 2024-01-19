@@ -23,6 +23,8 @@ public class PackageParser {
 	private List<AnnotationModel> annotations;
 	private PackageModel packageModel;
 	private List<RelationModel> relations;
+	private List<RelationModel> relationlistsProject=new Vector<>();
+
 
 	public PackageParser(String path, String packageName) {
 		this.packageName = packageName;
@@ -33,6 +35,7 @@ public class PackageParser {
 		annotations = new Vector<>();
 		packageModel = new PackageModel(packageName);
 		relations = new Vector<>();
+		RelationParser relationParser;
 
 		String packagePath = packageName.replace(".", "/");
 
@@ -44,20 +47,27 @@ public class PackageParser {
 			for (File file : files) {
 				String name = file.getName().replace(".class", "");
 				String fullName = packageName + "." + name;
-				RelationParser relationParser = new RelationParser(packages);
-				relations.addAll(relationParser.getRelations());
+
 				if (file.isFile() && file.getName().endsWith(".class")) {
 					Class<?> classFile = ClassesLoaderUtils.forName(path, fullName);
-
+					relationParser = new RelationParser(classFile);
 					if (classFile.isAnnotation()) {
 						annotations.add(new AnnotationParser(classFile).getAnnotation());
 					} else if (classFile.isInterface()) {
+						InterfaceModel i = new InterfaceParser(classFile).getInterfaceModel();
+						i.setRelations(relationParser.getRelations());
+						relations.addAll(relationParser.getRelations());
 						
-						interfaces.add(new InterfaceParser(classFile).getInterfaceModel());
+						interfaces.add(i);
 					} else if (classFile.isEnum()) {
 						enumerations.add(new EnumerationParser(classFile).getEnumeration());
 					} else {
-						classes.add(new ClassParser(classFile).getClassModel());
+						ClassModel c = new ClassParser(classFile).getClassModel();
+						c.setRelations(relationParser.getRelations());
+						relations.addAll(relationParser.getRelations());
+					
+			
+						classes.add(c);
 					}
 				} else if (file.isDirectory()) {
 					packages.add(new PackageParser(path, fullName).getPackageModel());
@@ -69,19 +79,27 @@ public class PackageParser {
 		packageModel.setInterfaces(interfaces);
 		packageModel.setEnumerations(enumerations);
 		packageModel.setAnnotations(annotations);
-		
+		packageModel.setRelations(relations);
 		packageModel.setPackages(packages);
-	
-	
-
+		relationlistsProject.addAll(relations);
 	}
 
 	public String getPackageName() {
 		return packageName;
 	}
 
+	private void getAll() {
+		System.out.println(relationlistsProject);
+
+	}
+
 	public void setPackageModel(PackageModel packageModel) {
 		this.packageModel = packageModel;
+	}
+
+	public List<RelationModel> getRelations() {
+		
+		return relationlistsProject;
 	}
 
 	public PackageModel getPackageModel() {

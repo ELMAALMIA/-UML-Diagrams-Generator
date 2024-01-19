@@ -69,8 +69,8 @@ public class PackageModel {
 		return relations;
 	}
 
-	public void setRelationst(List<RelationModel> relationsList) {
-		this.relations = relationsList;
+	public void setRelations(List<RelationModel> relations) {
+		this.relations = relations;
 	}
 
 	public void addRelation(RelationModel relation) {
@@ -98,7 +98,7 @@ public class PackageModel {
 		for (Enumeration e : enumerations) {
 			s += "\t" + e + "\n";
 		}
-		
+	for (RelationModel r: relations) 	s += "\t" + r + "\n";
 		return s;
 	}
 

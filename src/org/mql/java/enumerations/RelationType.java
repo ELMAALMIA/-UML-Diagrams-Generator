@@ -1,13 +1,13 @@
 package org.mql.java.enumerations;
 
 public enum RelationType  {
-    DEPENDENCY("..>"),
-    ASSOCIATION("--"),
-    AGGREGATION("--o"),
-    COMPOSITION("--*"),
+    DEPENDENCY(".....>"),
+    ASSOCIATION("----"),
+    AGGREGATION("----o"),
+    COMPOSITION("----*"),
 
-    GENERALIZATION("--|>"),
-    REALIZATION("..|>");
+    GENERALIZATION("----|>"),
+    REALIZATION("....|>");
 	
 
     private final String symbol;

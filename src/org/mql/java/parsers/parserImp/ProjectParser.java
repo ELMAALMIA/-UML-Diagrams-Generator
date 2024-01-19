@@ -13,7 +13,8 @@ public class ProjectParser {
 
 	private String projectPath;
 	private ProjectModel project;
-	private List<RelationModel> relations;
+	List<RelationModel> list;
+
 
 	public ProjectParser(String path) {
 		this.projectPath = path;
@@ -37,12 +38,14 @@ public class ProjectParser {
 		}
 
 		project.setPackagesList(packages);
-System.out.println(new RelationParser(packages));
+	
+		
+	
+		
+	
+
 	}
 
-	public List<RelationModel> getRelations() {
-		return relations;
-	}
 
 	public ProjectModel getProject() {
 		return project;
