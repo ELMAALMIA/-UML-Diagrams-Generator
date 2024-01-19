@@ -22,7 +22,7 @@ public class PackageParser {
 	private List<Enumeration> enumerations;
 	private List<AnnotationModel> annotations;
 	private PackageModel packageModel;
-    private List<RelationModel> relations;
+	private List<RelationModel> relations;
 
 	public PackageParser(String path, String packageName) {
 		this.packageName = packageName;
@@ -44,13 +44,15 @@ public class PackageParser {
 			for (File file : files) {
 				String name = file.getName().replace(".class", "");
 				String fullName = packageName + "." + name;
-
+				RelationParser relationParser = new RelationParser(packages);
+				relations.addAll(relationParser.getRelations());
 				if (file.isFile() && file.getName().endsWith(".class")) {
 					Class<?> classFile = ClassesLoaderUtils.forName(path, fullName);
 
 					if (classFile.isAnnotation()) {
 						annotations.add(new AnnotationParser(classFile).getAnnotation());
 					} else if (classFile.isInterface()) {
+						
 						interfaces.add(new InterfaceParser(classFile).getInterfaceModel());
 					} else if (classFile.isEnum()) {
 						enumerations.add(new EnumerationParser(classFile).getEnumeration());
@@ -67,9 +69,10 @@ public class PackageParser {
 		packageModel.setInterfaces(interfaces);
 		packageModel.setEnumerations(enumerations);
 		packageModel.setAnnotations(annotations);
-		packageModel.setPackages(packages);
-		packageModel.setRelationst(relations);
 		
+		packageModel.setPackages(packages);
+	
+	
 
 	}
 

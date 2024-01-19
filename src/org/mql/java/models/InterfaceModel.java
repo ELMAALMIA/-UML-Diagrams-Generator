@@ -14,7 +14,7 @@ public class InterfaceModel {
 	public InterfaceModel(Class<?> class1) {
 		   fields = new Vector<>();
 		    methods = new Vector<>();
-		interfaceName = class1.getName();
+		interfaceName = class1.getSimpleName();
 		for (Field field : class1.getDeclaredFields()) {
 			fields.add(new FieldModel(field));
 		}

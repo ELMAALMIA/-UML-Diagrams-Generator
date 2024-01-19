@@ -11,9 +11,7 @@ public class Enumeration {
 	public Enumeration(Class<?> classe) {
 
 		name = classe.getSimpleName();
-
 		valuesEnum = new Vector<>();
-
 		for (Object value : classe.getEnumConstants()) {
 			valuesEnum.add(value.toString());
 		}
@@ -26,10 +24,13 @@ public class Enumeration {
 	public List<String> getValuesEnum() {
 		return valuesEnum;
 	}
-	
 
 	@Override
 	public String toString() {
-		return "enumeration : " + name;
+		String s = getName();
+		for (String string : valuesEnum) {
+			s += "\n\t\t\t" + string;
+		}
+		return "enumeration : " + s + "\n";
 	}
 }

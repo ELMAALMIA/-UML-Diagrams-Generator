@@ -2,8 +2,8 @@ package org.mql.java.parsers;
 
 import java.io.File;
 
-public interface Parser<T> {
-    T parse(File file);
+public interface Parser<T,U> {
+    T Parse(U item);
 
 
 }

@@ -98,7 +98,7 @@ public class PackageModel {
 		for (Enumeration e : enumerations) {
 			s += "\t" + e + "\n";
 		}
-
+		
 		return s;
 	}
 

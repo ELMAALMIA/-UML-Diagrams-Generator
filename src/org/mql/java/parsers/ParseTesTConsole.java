@@ -11,7 +11,8 @@ public class ParseTestConsole {
 
 		String projectName = "El Maalmi Ayoub-UML Diagrams Generator";
 		ProjectParser projectParser = new ProjectParser(completePath + "/" + projectName);
-		System.out.println(projectParser.getProject());
+	//	System.out.println(projectParser.getProject());
+	
 //        List<RelationModel> relations = projectParser.getRelations();
 //        for (RelationModel relation : relations) {
 //            System.out.println("Relation: " + relation);
