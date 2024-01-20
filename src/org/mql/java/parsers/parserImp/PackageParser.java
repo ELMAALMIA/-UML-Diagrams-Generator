@@ -23,20 +23,22 @@ public class PackageParser {
 	private List<AnnotationModel> annotations;
 	private PackageModel packageModel;
 	private List<RelationModel> relations;
-	private List<RelationModel> relationlistsProject=new Vector<>();
-
+	private List<RelationModel> relationlistsProject = new Vector<>();
+	private String path;
 
 	public PackageParser(String path, String packageName) {
 		this.packageName = packageName;
-		packages = new Vector<>();
-		classes = new Vector<>();
-		interfaces = new Vector<>();
-		enumerations = new Vector<>();
-		annotations = new Vector<>();
-		packageModel = new PackageModel(packageName);
-		relations = new Vector<>();
-		RelationParser relationParser;
+		this.path = path;
+		this.packages = new Vector<>();
+		this.classes = new Vector<>();
+		this.interfaces = new Vector<>();
+		this.enumerations = new Vector<>();
+		this.annotations = new Vector<>();
+		this.packageModel = new PackageModel(packageName);
+		this.relations = new Vector<>();
+	}
 
+	public void parse() {
 		String packagePath = packageName.replace(".", "/");
 
 		File dir = new File(path + "/bin/" + packagePath);
@@ -50,14 +52,13 @@ public class PackageParser {
 
 				if (file.isFile() && file.getName().endsWith(".class")) {
 					Class<?> classFile = ClassesLoaderUtils.forName(path, fullName);
-					relationParser = new RelationParser(classFile);
+					RelationParser relationParser = new RelationParser(classFile);
 					if (classFile.isAnnotation()) {
 						annotations.add(new AnnotationParser(classFile).getAnnotation());
 					} else if (classFile.isInterface()) {
 						InterfaceModel i = new InterfaceParser(classFile).getInterfaceModel();
 						i.setRelations(relationParser.getRelations());
 						relations.addAll(relationParser.getRelations());
-						
 						interfaces.add(i);
 					} else if (classFile.isEnum()) {
 						enumerations.add(new EnumerationParser(classFile).getEnumeration());
@@ -65,12 +66,12 @@ public class PackageParser {
 						ClassModel c = new ClassParser(classFile).getClassModel();
 						c.setRelations(relationParser.getRelations());
 						relations.addAll(relationParser.getRelations());
-					
-			
 						classes.add(c);
 					}
 				} else if (file.isDirectory()) {
-					packages.add(new PackageParser(path, fullName).getPackageModel());
+					PackageParser packageParser = new PackageParser(path, fullName);
+					packageParser.parse();
+					packages.add(packageParser.getPackageModel());
 				}
 			}
 		}
@@ -98,7 +99,6 @@ public class PackageParser {
 	}
 
 	public List<RelationModel> getRelations() {
-		
 		return relationlistsProject;
 	}
 

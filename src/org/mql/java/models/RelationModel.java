@@ -20,10 +20,14 @@ public class RelationModel {
         return relationType;
     }
 
-    public Object getSourceModel() {
+    public Class<?> getSourceModel() {
 		return sourceModel;
 	}
+    
 
+    public Class<?> getTargetModel() {
+		return targetModel;
+	}
 	
 	public void setRelationType(RelationType relationType) {
         this.relationType = relationType;

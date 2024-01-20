@@ -14,12 +14,12 @@ public class ProjectParser {
 	private String projectPath;
 	private ProjectModel project;
 	List<RelationModel> list;
-
-
 	public ProjectParser(String path) {
-		this.projectPath = path;
 		project = new ProjectModel();
-
+		this.projectPath = path;
+	}
+	
+	public void parse() {	
 		File srcDirectory = new File(projectPath + "/bin");
 		List<PackageModel> packages = new Vector<>();
 
@@ -28,7 +28,11 @@ public class ProjectParser {
 			if (subDirectories != null) {
 				for (File subDirectory : subDirectories) {
 					if (subDirectory.isDirectory()) {
-						packages.add(new PackageParser(projectPath, subDirectory.getName()).getPackageModel());
+						//packages.add(new PackageParser(projectPath, subDirectory.getName()).getPackageModel());
+						PackageParser p = new PackageParser(projectPath, subDirectory.getName());
+						p.parse();
+						packages.add(p.getPackageModel());
+						
 					}
 				}
 			}
@@ -38,12 +42,7 @@ public class ProjectParser {
 		}
 
 		project.setPackagesList(packages);
-	
-		
-	
-		
-	
-
+			
 	}
 
 

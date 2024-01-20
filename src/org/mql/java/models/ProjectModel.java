@@ -1,12 +1,14 @@
 package org.mql.java.models;
 
 import java.util.List;
+import java.util.Vector;
 
 public class ProjectModel {
     private String name;
-    private List<PackageModel> packagesList;
-    private List<RelationModel> relationsList;
+    public List<PackageModel> packagesList =new Vector<>();
+    private List<RelationModel> relationsList=new Vector<>();
     private String path;
+    private ProjectModel projectModel;
 
     public ProjectModel() {
     }
@@ -17,6 +19,13 @@ public class ProjectModel {
         this.name = name;
         this.path = path;
     }
+    
+    public void setProjectModel(ProjectModel projectModel) {
+		this.projectModel = projectModel;
+	}
+    public ProjectModel getProjectModel() {
+		return projectModel;
+	}
 
     public List<PackageModel> getPackagesList() {
         return packagesList;
@@ -62,7 +71,7 @@ public class ProjectModel {
         for (PackageModel packageModel : packagesList) {
             string += packageModel + "\n";
         }
-        return string;
+        return string+"\n"+"test";
     }
 
    

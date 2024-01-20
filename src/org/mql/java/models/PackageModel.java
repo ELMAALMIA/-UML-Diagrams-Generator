@@ -5,18 +5,27 @@ import java.util.Vector;
 
 public class PackageModel {
 	private String name;
-	private List<PackageModel> packages;
-	private List<ClassModel> classes;
+	public List<PackageModel> packages;
+	public List<ClassModel> classes;
 	private List<InterfaceModel> interfaces;
 	private List<Enumeration> enumerations;
 	private List<AnnotationModel> annotations;
-	private List<RelationModel> relations;
+	public List<RelationModel> relations;
 	
-
 	public PackageModel(String name) {
-		this.name = name;
+	    this.name = name;
+	    this.packages = new Vector<>();
+	    this.classes = new Vector<>();
+	    this.interfaces = new Vector<>();
+	    this.enumerations = new Vector<>();
+	    this.annotations = new Vector<>();
+	    this.relations = new Vector<>();
 	}
-
+	
+	public PackageModel() {
+		
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -66,11 +75,19 @@ public class PackageModel {
 	}
 
 	public List<RelationModel> getRelations() {
-		return relations;
+		return this.relations;
 	}
 
 	public void setRelations(List<RelationModel> relations) {
 		this.relations = relations;
+	}
+	
+	public void showRelarion() {
+		System.out.println("relation");
+		System.out.println("relation ; "+relations.size());
+		for (RelationModel r: this.getRelations()) {
+			System.out.println(r);
+		}
 	}
 
 	public void addRelation(RelationModel relation) {
@@ -98,8 +115,10 @@ public class PackageModel {
 		for (Enumeration e : enumerations) {
 			s += "\t" + e + "\n";
 		}
-	for (RelationModel r: relations) 	s += "\t" + r + "\n";
+		
+		for (RelationModel r: this.getRelations()) 	s += "\t" + r + "\n";
 		return s;
 	}
 
+	
 }

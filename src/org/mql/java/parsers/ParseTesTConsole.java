@@ -14,17 +14,17 @@ public class ParseTestConsole {
 
 		String projectName = "El Maalmi Ayoub-UML Diagrams Generator";
 		ProjectParser projectParser = new ProjectParser(completePath + "/" + projectName);
+		
+	
+		projectParser.parse();
 
-
-
-	projectParser.getProject();
-//        if (relations != null) {
-//            for (RelationModel relation : relations) {
-//                System.out.println("Relation: " + relation.toString());
-//            }
-//        } else {
-//            System.out.println("Aucune relation trouvée.");
-//        }
+		List<PackageModel> packagesList = projectParser.getProject().getPackagesList();
+				
+		for (PackageModel item : packagesList) {
+			item.getRelations().forEach(e->System.out.print(e));
+			item.showRelarion();
+			
+		}
 
 	}
 
