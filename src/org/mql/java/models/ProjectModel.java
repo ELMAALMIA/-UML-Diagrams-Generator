@@ -69,7 +69,7 @@ public class ProjectModel {
     public String toString() {
         String string = "";
         for (PackageModel packageModel : packagesList) {
-            string += packageModel + "\n";
+            string += packageModel.getName() + "\n";
         }
         return string+"\n"+"test";
     }

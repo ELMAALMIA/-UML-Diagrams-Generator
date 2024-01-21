@@ -1,33 +1,35 @@
 package org.mql.java.parsers;
 
+import java.util.List;
+
+import org.mql.java.models.PackageModel;
 import org.mql.java.models.ProjectModel;
 import org.mql.java.parsers.parserImp.ProjectParser;
 import org.mql.java.parsers.parserImp.XMLGenerator;
 
 public class TestXMLGenerator {
 
-    public TestXMLGenerator() {
-    	String completePath = "D:/MQL-2023/Java/";
+	public TestXMLGenerator() {
+		String completePath = "D:/MQL-2023/Java/";
 
 		String projectName = "El Maalmi Ayoub-UML Diagrams Generator";
 		ProjectParser projectParser = new ProjectParser(completePath + "/" + projectName);
 
+		XMLGenerator xmlGenerator = new XMLGenerator();
 
-ProjectModel projectModel = new ProjectModel();
-projectModel.setProjectModel(projectParser.getProject());
-System.out.println("-----------------------------------------------*********************--------------");
-        XMLGenerator xmlGenerator = new XMLGenerator();
+		System.out.println(projectParser.getProject());
+		projectParser.parse();
 
-        // Chemin où le fichier XML sera enregistré (dans le dossier resources)
-        String xmlOutputPath = completePath + projectName + "/resources/projectStructure.xml";
+		// Chemin où le fichier XML sera enregistré (dans le dossier resources)
+		String xmlOutput = completePath + projectName + "/resources/project-UML.xml";
+		// Générer le fichier XML
+		// xmlGenerator.generateXML(packagesList,nameProject, xmlOutput);
+		xmlGenerator.generateXML(projectParser.getProject(), xmlOutput);
 
-        // Générer le fichier XML
-        xmlGenerator.generateXML(projectModel, xmlOutputPath);
+		System.out.println("Fichier XML généré avec succès : " + xmlOutput);
+	}
 
-        System.out.println("Fichier XML généré avec succès : " + xmlOutputPath);
-    }
-
-    public static void main(String[] args) {
-        new TestXMLGenerator();
-    }
+	public static void main(String[] args) {
+		new TestXMLGenerator();
+	}
 }

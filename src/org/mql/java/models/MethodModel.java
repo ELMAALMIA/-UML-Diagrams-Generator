@@ -9,22 +9,30 @@ import java.lang.reflect.Parameter;
 import org.mql.java.enumerations.AccessModifier;
 import org.mql.java.utils.VisibilityUtils;
 
-public class MethodModel  {
+public class MethodModel {
 	public String name;
 	private List<ParameterModel> parameters;
 	private int modifier;
 	private AccessModifier visibility;
+	private boolean isStatic;
+	private boolean isFinal;
 
 //	private boolean isConstruct;
 	private String typeReturn;
+
 	public MethodModel(Method m) {
-		
+
 		this.name = m.getName();
 		this.parameters = new Vector<>();
 		addAll(m.getParameters());
-		 this.modifier = m.getModifiers();
-		 this.visibility = VisibilityUtils.determineVisibility(this.modifier);
-this.typeReturn =m.getReturnType().getSimpleName();
+		this.modifier = m.getModifiers();
+
+		this.isStatic = Modifier.isStatic(this.modifier);
+		this.isFinal = Modifier.isFinal(this.modifier);
+
+		this.visibility = VisibilityUtils.determineVisibility(this.modifier);
+
+		this.typeReturn = m.getReturnType().getSimpleName();
 	}
 
 	private void addAll(Parameter[] parametersadd) {
@@ -33,8 +41,6 @@ this.typeReturn =m.getReturnType().getSimpleName();
 		}
 
 	}
-
-
 
 	public List<ParameterModel> getParameters() {
 		return parameters;
@@ -63,14 +69,11 @@ this.typeReturn =m.getReturnType().getSimpleName();
 //	public void setTypereturn(String typereturn) {
 //		this.typereturn = typereturn;
 //	}
-	
-
 
 	public String getName() {
 		return name;
 	}
 
-	
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -90,20 +93,38 @@ this.typeReturn =m.getReturnType().getSimpleName();
 	public void setTypeReturn(String typeReturn) {
 		this.typeReturn = typeReturn;
 	}
-	@Override
-	public String toString() {
-		String s ="";
-		
-	s= getVisibility().getSymbol() + " "+getName();
-	s+="(";
-	for(int i=0 ; i<=parameters.size()-1;i++) {
-		 s+= parameters.get(i);
-		 if(i!=parameters.size()-1) s+=", ";
-	}
-	s+=") "+ " : "+getTypeReturn();
 	
-	return s;
+
+	public boolean isStatic() {
+		return isStatic;
 	}
 
-	
+	public void setStatic(boolean isStatic) {
+		this.isStatic = isStatic;
+	}
+
+	public boolean isFinal() {
+		return isFinal;
+	}
+
+	public void setFinal(boolean isFinal) {
+		this.isFinal = isFinal;
+	}
+
+	@Override
+	public String toString() {
+		String s = "";
+		s += visibility.getSymbol();
+		s = getVisibility().getSymbol() + " " + getName();
+		s += "(";
+		for (int i = 0; i <= parameters.size() - 1; i++) {
+			s += parameters.get(i);
+			if (i != parameters.size() - 1)
+				s += ", ";
+		}
+		s += ") " + " : " + getTypeReturn();
+
+		return s;
+	}
+
 }

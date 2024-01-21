@@ -8,17 +8,24 @@ import java.util.Vector;
 import org.mql.java.models.PackageModel;
 import org.mql.java.models.ProjectModel;
 import org.mql.java.models.RelationModel;
+import org.mql.java.utils.StringUtils;
 
 public class ProjectParser {
 
 	private String projectPath;
 	private ProjectModel project;
+	private String name;
 	List<RelationModel> list;
 	public ProjectParser(String path) {
 		project = new ProjectModel();
 		this.projectPath = path;
+		project.setName(getNameProject(path));
 	}
 	
+	private String getNameProject(String path) {
+	 return StringUtils.extractProjectName(path);
+	}
+
 	public void parse() {	
 		File srcDirectory = new File(projectPath + "/bin");
 		List<PackageModel> packages = new Vector<>();

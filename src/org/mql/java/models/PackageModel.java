@@ -98,7 +98,7 @@ public class PackageModel {
 	public String toString() {
 		String s = "";
 
-		s += "Package : " + name + "\n";
+		s += "Package : " + getName() + "\n";
 
 		for (PackageModel p : packages) {
 			s += "\t" + p + "\n";

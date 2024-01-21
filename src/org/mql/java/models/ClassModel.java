@@ -16,7 +16,6 @@ public class ClassModel implements ModelInterface {
 	private List<ConstructorModel> Constructors;
 	private List<String> interfacesImp;
 	private List<String> inheritanceChain;
-	protected List<PropertyModel> properties;
 	private String parent;
 	private List<RelationModel> relations;
 
@@ -26,7 +25,7 @@ public class ClassModel implements ModelInterface {
 		this.Constructors = new Vector<>();
 		this.interfacesImp = new Vector<>();
 		this.inheritanceChain = new Vector<>();
-		this.properties = new Vector<>();
+	
 		this.name = c.getSimpleName();
 		this.relations = new Vector<>();
 		this.parent = (c.getSuperclass() != null) ? c.getSuperclass().getName() : null;
@@ -107,13 +106,6 @@ public class ClassModel implements ModelInterface {
 		this.inheritanceChain = inheritanceChain;
 	}
 
-	public List<PropertyModel> getProperties() {
-		return properties;
-	}
-
-	public void setProperties(List<PropertyModel> properties) {
-		this.properties = properties;
-	}
 
 	public String getParent() {
 		return parent;

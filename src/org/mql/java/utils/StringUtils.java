@@ -1,5 +1,7 @@
 package org.mql.java.utils;
 
+import java.io.File;
+
 public class StringUtils {
 
     public static String getSimpleName(String s) {
@@ -9,4 +11,16 @@ public class StringUtils {
         }
         return s;
     }
+    public static String extractProjectName(String path) {
+
+        String[] pathArray = path.split("/");
+
+       
+        if (pathArray.length > 0) {
+            return pathArray[pathArray.length - 1];
+        } else {
+            return "";
+        }
+    }
 }
+
