@@ -51,12 +51,7 @@ public class FieldModel {
 	}
 
 //
-//	@Override
-//	public String toString() {
-//		String visibilityString = getNiveauVisiblity().getSymbol();
-////		String modifiers = (_static ? "{static} " : "") + (_final ? "{readonly} " : "");
-//		return visibilityString + " " + getName() + " : " + getType() + " " + (isMultiple() ? "[]" : "");
-//	}
+
 
 	public String getName() {
 		return name;

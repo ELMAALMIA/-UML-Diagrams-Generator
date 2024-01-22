@@ -1,5 +1,6 @@
 package org.mql.java.parsers.xml;
 
+import java.io.File;
 import java.util.LinkedList;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -11,15 +12,14 @@ import org.w3c.dom.NodeList;
 
 public class XMLNode {
 	private Node node;
-	private XMLNode children[]; // des elements
+	private XMLNode children[];
 
 	public XMLNode(String source) {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newDefaultInstance();
-//		factory.setValidating(true); // parseur validant
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document document = builder.parse(source);
-// traitment
+			Document document = builder.parse(new File(source));
+			setNode(document.getDocumentElement());
 		} catch (Exception e) {
 			System.out.println("Erreur : " + e.getMessage());
 		}
@@ -38,7 +38,7 @@ public class XMLNode {
 		return children;
 	}
 
-	public String getName() { // delegate method
+	public String getName() {
 		return node.getNodeName();
 	}
 
@@ -46,7 +46,7 @@ public class XMLNode {
 		return node.getNodeName().equals(name);
 	}
 
-	public XMLNode getchild(String name) {
+	public XMLNode getChild(String name) {
 		for (XMLNode child : children) {
 			if (child.isNamed(name)) {
 				return child;
@@ -81,7 +81,6 @@ public class XMLNode {
 		try {
 			value = Integer.parseInt(s);
 		} catch (Exception e) {
-			// TODO: handle exception
 			System.out.println("erreur : " + e.getMessage());
 		}
 		return value;
@@ -93,11 +92,9 @@ public class XMLNode {
 		for (int i = 0; i < list.getLength(); i++) {
 			if (list.item(i).getNodeType() == Node.ELEMENT_NODE) {
 				nodes.add(new XMLNode(list.item(i)));
-//				System.out.println(list.item(i).getNodeName());
 			}
 		}
 		children = new XMLNode[nodes.size()];
 		nodes.toArray(children);
 	}
-
 }

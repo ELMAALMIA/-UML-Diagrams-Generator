@@ -42,7 +42,6 @@ public class XMLGenerator {
 			Element packageElement = document.createElement("package");
 			packageElement.setAttribute("name", packageModel.getName());
 
-			// Add classes, interfaces, and relations
 			for (ClassModel classModel : packageModel.getClasses()) {
 				packageElement.appendChild(createClass(document, classModel));
 			}
