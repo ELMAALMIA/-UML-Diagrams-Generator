@@ -17,6 +17,9 @@ public class FieldModel {
 	private boolean isFinal;
 	private Multiplicity multiplicity;
 	private String genericType;
+	public FieldModel() {
+		
+	}
 
 	public FieldModel(Field f) {
 		name = f.getName();
@@ -31,6 +34,7 @@ public class FieldModel {
 			multiplicity.setUpperBound("n");
 		}
 	}
+
 
 	public boolean isIterable() {
 		return getType().equals("List") || getType().equals("Set") || getType().equals("Queue")
@@ -100,6 +104,18 @@ public class FieldModel {
 	public void setMultiplicity(Multiplicity multiplicity) {
 		this.multiplicity = multiplicity;
 	}
+	public void setIterable(boolean isIterable) {
+	    if (isIterable) {
+	        if (getType().equals("List") || getType().equals("Set") || getType().equals("Queue")
+	                || getType().equals("Deque") || getType().endsWith("[]")) {
+	            multiplicity = new Multiplicity();
+	            multiplicity.setUpperBound("n");
+	        }
+	    } else {
+	        multiplicity = null;
+	    }
+	}
+
 
 	@Override
 	public String toString() {
@@ -114,4 +130,6 @@ public class FieldModel {
 
 		return visibilityString + " " + getName() + " : " + typeString + multiplicityString;
 	}
+
+
 }

@@ -3,38 +3,49 @@ package org.mql.java.models;
 import org.mql.java.enumerations.RelationType;
 
 public class RelationModel {
-    private Class<?> sourceModel;
-    private Class<?> targetModel;     
-    private RelationType relationType;
+	private Class<?> sourceModel;
+	private Class<?> targetModel;
+	private RelationType relationType;
 
-    public RelationModel(Class<?> sourceModel, Class<?> targetModel, RelationType relationType) {
-        this.sourceModel = sourceModel;
-        this.targetModel = targetModel;
-        this.relationType = relationType;
-    }
+	public RelationModel(Class<?> sourceModel, Class<?> targetModel, RelationType relationType) {
+		this.sourceModel = sourceModel;
+		this.targetModel = targetModel;
+		this.relationType = relationType;
+	}
 
-    // Getters et Setters
-   
+	// Getters et Setters
 
-    public RelationType getRelationType() {
-        return relationType;
-    }
+	public RelationModel() {
 
-    public Class<?> getSourceModel() {
+	}
+
+	public RelationType getRelationType() {
+		return relationType;
+	}
+
+	public Class<?> getSourceModel() {
 		return sourceModel;
 	}
-    
 
-    public Class<?> getTargetModel() {
+	public Class<?> getTargetModel() {
 		return targetModel;
 	}
-	
-	public void setRelationType(RelationType relationType) {
-        this.relationType = relationType;
-    }
 
-    @Override
-    public String toString() {
-        return "Relation  : \t"+getRelationType()+ "\t"  +   sourceModel.getSimpleName() + "-----------------"+ getRelationType().getSymbol()+ targetModel.getSimpleName() +"\n";
-    }
+	public void setTargetModel(Class<?> targetModel) {
+		this.targetModel = targetModel;
+	}
+
+	public void setSourceModel(Class<?> sourceModel) {
+		this.sourceModel = sourceModel;
+	}
+
+	public void setRelationType(RelationType relationType) {
+		this.relationType = relationType;
+	}
+
+	@Override
+	public String toString() {
+		return "Relation  : \t" + getRelationType() + "\t" + sourceModel.getSimpleName() + "-----------------"
+				+ getRelationType().getSymbol() + targetModel.getSimpleName() + "\n";
+	}
 }

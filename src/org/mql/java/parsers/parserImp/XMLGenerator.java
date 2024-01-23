@@ -146,7 +146,7 @@ public class XMLGenerator {
 		Element fieldElement = document.createElement("field");
 		fieldElement.setAttribute("name", field.getName());
 
-		String visibilityString = field.getNiveauVisiblity().getSymbol();
+		String visibilityString = field.getNiveauVisiblity().toString();
 		String typeString = field.getType();
 		String multiplicityString = field.isIterable() ? "[]" : "";
 
@@ -168,7 +168,7 @@ public class XMLGenerator {
 		Element methodElement = document.createElement("method");
 		methodElement.setAttribute("name", method.getName());
 		methodElement.setAttribute("returnType", method.getTypeReturn());
-		methodElement.setAttribute("visibility", method.getVisibility().getSymbol());
+		methodElement.setAttribute("visibility", method.getVisibility().toString());
 		methodElement.setAttribute("isStatic", String.valueOf(method.isStatic()));
 		methodElement.setAttribute("isFinal", String.valueOf(method.isFinal()));
 		for (ParameterModel parameterModel : method.getParameters()) {

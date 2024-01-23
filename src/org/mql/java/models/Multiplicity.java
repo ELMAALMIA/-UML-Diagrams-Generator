@@ -38,12 +38,11 @@ public class Multiplicity {
     }
 
     public boolean isMultiple() {
-        // Check for multiple cardinality
+
         return upperBound.equals("*") || upperBound.equalsIgnoreCase("n") || isNumericMultiple(upperBound);
     }
 
     private boolean isNumericMultiple(String bound) {
-        // Check if the bound is a number greater than 1
         try {
             int num = Integer.parseInt(bound);
             return num > 1;

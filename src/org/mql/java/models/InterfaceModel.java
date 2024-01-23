@@ -12,10 +12,16 @@ public class InterfaceModel {
 	private List<MethodModel> methods;
 	private List<RelationModel> relations;
 
+	public InterfaceModel() {
+		fields = new Vector<>();
+		methods = new Vector<>();
+		relations = new Vector<>();
+	}
+
 	public InterfaceModel(Class<?> class1) {
-		   fields = new Vector<>();
-		    methods = new Vector<>();
-		    relations =new Vector<>();
+		fields = new Vector<>();
+		methods = new Vector<>();
+		relations = new Vector<>();
 		interfaceName = class1.getSimpleName();
 		for (Field field : class1.getDeclaredFields()) {
 			fields.add(new FieldModel(field));
@@ -48,24 +54,31 @@ public class InterfaceModel {
 	public void setMethods(List<MethodModel> methods) {
 		this.methods = methods;
 	}
-	
+
 	public void setRelations(List<RelationModel> relations) {
 		this.relations = relations;
 	}
+
 	public List<RelationModel> getRelations() {
 		return relations;
 	}
-	
+
+	public void addMethod(MethodModel methodModel) {
+	this.methods.add(methodModel);
+		
+	}
+
 	@Override
 	public String toString() {
-		String s ="";
+		String s = "";
 		for (FieldModel fieldModel : fields) {
-			s+="\n\t\t\t"+fieldModel; 
+			s += "\n\t\t\t" + fieldModel;
 		}
-		for(MethodModel model : methods) s+="\n\t\t\t"+model; 
+		for (MethodModel model : methods)
+			s += "\n\t\t\t" + model;
 
-		return " Interface : " + getInterfaceName()+s;
+		return " Interface : " + getInterfaceName() + s;
 	}
-	
+
 
 }

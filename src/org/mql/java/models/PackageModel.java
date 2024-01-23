@@ -23,7 +23,12 @@ public class PackageModel {
 	}
 	
 	public PackageModel() {
-		
+		    this.packages = new Vector<>();
+		    this.classes = new Vector<>();
+		    this.interfaces = new Vector<>();
+		    this.enumerations = new Vector<>();
+		    this.annotations = new Vector<>();
+		    this.relations = new Vector<>();
 	}
 	
 	public String getName() {
@@ -116,7 +121,7 @@ public class PackageModel {
 			s += "\t" + e + "\n";
 		}
 		
-		for (RelationModel r: this.getRelations()) 	s += "\t" + r + "\n";
+		//for (RelationModel r: this.getRelations()) 	s += "\t" + r + "\n";
 		return s;
 	}
 

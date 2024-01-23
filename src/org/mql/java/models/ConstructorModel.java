@@ -16,16 +16,20 @@ public class ConstructorModel {
 	private AccessModifier visibility;
 
 	public ConstructorModel(Constructor<?> c) {
+		this.parameterList = new Vector<>();
 	}
 
 	public ConstructorModel() {
+		this.parameterList = new Vector<>();
+		this.visibility = 	AccessModifier.PUBLIC;
 	}
 
 	public ConstructorModel(Constructor<?> c, String name) {
-		parameterList = new Vector<>();
+		this.parameterList = new Vector<>();
 		this.name = name;
 		this.modifier = c.getModifiers();
-		this.visibility = new VisibilityUtils().determineVisibility(this.modifier);
+		new VisibilityUtils();
+		this.visibility = VisibilityUtils.determineVisibility(this.modifier);
 		addAll(c.getParameters());
 
 	}

@@ -1,5 +1,7 @@
 package org.mql.java.models;
 
+import java.awt.Component;
+import java.awt.Graphics;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -19,15 +21,25 @@ public class ClassModel implements ModelInterface {
 	private String parent;
 	private List<RelationModel> relations;
 
-	public ClassModel(Class<?> c) {
+	public ClassModel() {
 		this.filedes = new Vector<>();
 		this.methods = new Vector<>();
 		this.Constructors = new Vector<>();
 		this.interfacesImp = new Vector<>();
 		this.inheritanceChain = new Vector<>();
-	
-		this.name = c.getSimpleName();
 		this.relations = new Vector<>();
+	}
+
+	public ClassModel(Class<?> c) {
+
+		this.filedes = new Vector<>();
+		this.methods = new Vector<>();
+		this.Constructors = new Vector<>();
+		this.interfacesImp = new Vector<>();
+		this.inheritanceChain = new Vector<>();
+		this.relations = new Vector<>();
+		this.name = c.getSimpleName();
+	
 		this.parent = (c.getSuperclass() != null) ? c.getSuperclass().getName() : null;
 
 		for (Field field : c.getDeclaredFields()) {
@@ -66,8 +78,16 @@ public class ClassModel implements ModelInterface {
 		return methods;
 	}
 
+	public void addFiled(FieldModel fieldModel) {
+		filedes.add(fieldModel);
+	}
+
 	public void setMethods(List<MethodModel> methods) {
 		this.methods = methods;
+	}
+
+	public void addMethod(MethodModel m) {
+		this.methods.add(m);
 	}
 
 	public List<ConstructorModel> getConstructors() {
@@ -106,7 +126,6 @@ public class ClassModel implements ModelInterface {
 		this.inheritanceChain = inheritanceChain;
 	}
 
-
 	public String getParent() {
 		return parent;
 	}
@@ -123,6 +142,16 @@ public class ClassModel implements ModelInterface {
 		this.filedes = filedes;
 	}
 
+	public void addInterfacesImp(String i) {
+		interfacesImp.add(i);
+		
+	}
+
+	public void addConstructor(ConstructorModel constructorModel) {
+		Constructors.add(constructorModel);
+		
+	}
+
 	@Override
 	public String toString() {
 		String s = "\n\t\t\t--------------------------------------------------";
@@ -134,7 +163,7 @@ public class ClassModel implements ModelInterface {
 		for (MethodModel methodModel : methods)
 			s += "\n\t\t\t" + methodModel;
 		s += "\n\t\t\t--------------------------------------------------";
-		return "Class :  " + getName() + s+" ";
+		return "Class :  " + getName() + s + " ";
 
 	}
 
@@ -142,5 +171,9 @@ public class ClassModel implements ModelInterface {
 	public void getXml() {
 
 	}
+
+
+
+
 
 }

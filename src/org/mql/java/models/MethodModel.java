@@ -20,10 +20,14 @@ public class MethodModel {
 //	private boolean isConstruct;
 	private String typeReturn;
 
-	public MethodModel(Method m) {
-
-		this.name = m.getName();
+	public MethodModel() {
 		this.parameters = new Vector<>();
+	}
+
+	public MethodModel(Method m) {
+		this.parameters = new Vector<>();
+		this.name = m.getName();
+
 		addAll(m.getParameters());
 		this.modifier = m.getModifiers();
 
@@ -93,7 +97,6 @@ public class MethodModel {
 	public void setTypeReturn(String typeReturn) {
 		this.typeReturn = typeReturn;
 	}
-	
 
 	public boolean isStatic() {
 		return isStatic;

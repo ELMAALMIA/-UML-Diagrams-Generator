@@ -2,10 +2,12 @@ package org.mql.java.parsers.xml;
 
 import java.io.File;
 import java.util.LinkedList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.mql.java.models.ClassModel;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -28,6 +30,10 @@ public class XMLNode {
 	public XMLNode(Node node) {
 		super();
 		setNode(node);
+	}
+
+	public XMLNode() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Node getNode() {
@@ -97,4 +103,8 @@ public class XMLNode {
 		children = new XMLNode[nodes.size()];
 		nodes.toArray(children);
 	}
+
+
+
+
 }

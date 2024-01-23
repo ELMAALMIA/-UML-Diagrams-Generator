@@ -1,13 +1,9 @@
 package org.mql.java.parsers;
 
 
-import java.util.List;
-
-import org.mql.java.models.PackageModel;
-import org.mql.java.models.ProjectModel;
 import org.mql.java.parsers.parserImp.ProjectParser;
 import org.mql.java.parsers.parserImp.XMIGenerator;
-import org.mql.java.parsers.parserImp.XMLGenerator;
+
 
 public class TestXMIGenerator {
 
@@ -22,7 +18,7 @@ public class TestXMIGenerator {
 		System.out.println(projectParser.getProject());
 		projectParser.parse();
 
-		String xmlOutput = completePath + projectName + "/resources/project-UML-XMI.xml";
+		String xmlOutput = completePath + projectName + "/resources/xmlDocument/project-UML-XMI.xml";
 
 		xmiGenerator.generateXMI(projectParser.getProject(), xmlOutput);
 

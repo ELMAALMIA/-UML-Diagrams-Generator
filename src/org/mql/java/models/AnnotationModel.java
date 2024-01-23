@@ -1,22 +1,27 @@
 package org.mql.java.models;
 
 public class AnnotationModel {
-private String name;
+	private String name;
+
 	public AnnotationModel(Class<?> c) {
-	name = c.getSimpleName();
+		name = c.getSimpleName();
 	}
-	
-	
+
+	public AnnotationModel() {
+
+	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
-		public String toString() {
-			return "Annotation " +getName();
-		}
+	public String toString() {
+		return "Annotation " + getName();
+	}
 
 }

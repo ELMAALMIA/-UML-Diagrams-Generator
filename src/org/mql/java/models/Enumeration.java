@@ -8,10 +8,14 @@ public class Enumeration {
 	private String name;
 	private List<String> valuesEnum;
 
-	public Enumeration(Class<?> classe) {
+	public Enumeration() {
+		this.valuesEnum = new Vector<>();
+	}
 
+	public Enumeration(Class<?> classe) {
+		this.valuesEnum = new Vector<>();
 		name = classe.getSimpleName();
-		valuesEnum = new Vector<>();
+
 		for (Object value : classe.getEnumConstants()) {
 			valuesEnum.add(value.toString());
 		}
@@ -19,6 +23,10 @@ public class Enumeration {
 
 	public String getName() {
 		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public List<String> getValuesEnum() {
