@@ -51,9 +51,12 @@ public class PackageParser implements Parser {
 			for (File file : files) {
 				String name = file.getName().replace(".class", "");
 				String fullName = packageName + "." + name;
+				
 
 				if (file.isFile() && file.getName().endsWith(".class")) {
+					System.out.println(fullName);
 					Class<?> classFile = ClassesLoaderUtils.forName(path, fullName);
+					System.out.println(classFile);
 					RelationParser relationParser = new RelationParser(classFile);
 					if (classFile.isAnnotation()) {
 						annotations.add(new AnnotationParser(classFile).getAnnotation());
