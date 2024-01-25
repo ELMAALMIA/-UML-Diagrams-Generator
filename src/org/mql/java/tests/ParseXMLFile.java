@@ -1,4 +1,4 @@
-package org.mql.java.parsers;
+package org.mql.java.tests;
 
 
 import java.util.List;

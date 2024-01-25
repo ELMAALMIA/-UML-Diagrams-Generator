@@ -1,8 +1,8 @@
-package org.mql.java.parsers;
+package org.mql.java.tests;
 
 
 import org.mql.java.parsers.parserImp.ProjectParser;
-import org.mql.java.parsers.parserImp.XMIGenerator;
+import org.mql.java.xml.XMIGenerator;
 
 
 public class TestXMIGenerator {

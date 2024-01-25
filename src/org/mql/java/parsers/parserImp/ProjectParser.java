@@ -8,9 +8,10 @@ import java.util.Vector;
 import org.mql.java.models.PackageModel;
 import org.mql.java.models.ProjectModel;
 import org.mql.java.models.RelationModel;
+import org.mql.java.parsers.Parser;
 import org.mql.java.utils.StringUtils;
 
-public class ProjectParser {
+public class ProjectParser implements Parser {
 
 	private String projectPath;
 	private ProjectModel project;
@@ -25,7 +26,7 @@ public class ProjectParser {
 	private String getNameProject(String path) {
 	 return StringUtils.extractProjectName(path);
 	}
-
+@Override
 	public void parse() {	
 		File srcDirectory = new File(projectPath + "/bin");
 		List<PackageModel> packages = new Vector<>();
@@ -39,6 +40,7 @@ public class ProjectParser {
 						PackageParser p = new PackageParser(projectPath, subDirectory.getName());
 						p.parse();
 						packages.add(p.getPackageModel());
+						System.out.println(p.getPackageModel());
 						
 					}
 				}

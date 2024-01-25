@@ -1,4 +1,4 @@
-package org.mql.java.parsers.parserImp;
+package org.mql.java.xml;
 
 import org.mql.java.models.*;
 import org.w3c.dom.Document;

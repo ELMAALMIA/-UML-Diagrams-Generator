@@ -11,9 +11,10 @@ import org.mql.java.models.Enumeration;
 import org.mql.java.models.InterfaceModel;
 import org.mql.java.models.PackageModel;
 import org.mql.java.models.RelationModel;
+import org.mql.java.parsers.Parser;
 import org.mql.java.utils.ClassesLoaderUtils;
 
-public class PackageParser {
+public class PackageParser implements Parser {
 
 	private String packageName;
 	private List<PackageModel> packages;
@@ -38,6 +39,7 @@ public class PackageParser {
 		this.relations = new Vector<>();
 	}
 
+	@Override
 	public void parse() {
 		String packagePath = packageName.replace(".", "/");
 

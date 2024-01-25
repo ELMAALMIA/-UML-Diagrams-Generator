@@ -101,29 +101,30 @@ public class PackageModel {
 
 	@Override
 	public String toString() {
-		String s = "";
+	    StringBuilder s = new StringBuilder("Package : " + getName() + "\n");
 
-		s += "Package : " + getName() + "\n";
+	    for (PackageModel p : packages) {
+	        s.append("\tPackage: ").append(p.getName()).append("\n");
+	    }
+	    for (ClassModel c : classes) {
+	        s.append("\tClass: ").append(c.getName()).append("\n");
+	    }
+	    for (InterfaceModel i : interfaces) {
+	        s.append("\tInterface: ").append(i.getInterfaceName()).append("\n");
+	    }
+	    for (Enumeration e : enumerations) {
+	        s.append("\tEnum: ").append(e.getName()).append("\n");
+	    }
+	    for (AnnotationModel a : annotations) {
+	        s.append("\tAnnotation: ").append(a.getName()).append("\n");
+	    }
+	    for (RelationModel r : relations) {
+	        s.append("\tRelation: ").append(r.toString()).append("\n");
+	    }
 
-		for (PackageModel p : packages) {
-			s += "\t" + p + "\n";
-		}
-		for (ClassModel c : classes) {
-			s += "\t" + c + "\n";
-		}
-		for (AnnotationModel a : annotations) {
-			s += "\t" + a + "\n";
-		}
-		for (InterfaceModel i : interfaces) {
-			s+= "\t" + i + "\n";
-		}
-		for (Enumeration e : enumerations) {
-			s += "\t" + e + "\n";
-		}
-		
-		//for (RelationModel r: this.getRelations()) 	s += "\t" + r + "\n";
-		return s;
+	    return s.toString();
 	}
+
 
 	
 }
