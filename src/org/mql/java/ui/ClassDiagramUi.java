@@ -59,7 +59,7 @@ public class ClassDiagramUi extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
-
+/*
         for (RelationModel relation : relations) {
             Point startPoint = findCoordinates(relation.getSourceModel());
             Point endPoint = findCoordinates(relation.getTargetModel());
@@ -67,7 +67,10 @@ public class ClassDiagramUi extends JPanel {
             g2d.drawLine(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
       
         }
+        
+        */
     }
+    /*
     private Point findCoordinates(Class<?> model) {
        
         for (Component comp : this.getComponents()) {
@@ -86,7 +89,7 @@ public class ClassDiagramUi extends JPanel {
            
         }
         return null;
-    }
+    }*/
 
     public static void displayClassDiagram(String projectName, List<PackageModel> rootPackages) {
         JFrame frame = new JFrame("Class Diagram: " + projectName);

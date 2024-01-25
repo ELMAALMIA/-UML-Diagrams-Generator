@@ -105,6 +105,21 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setMethods" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;MethodModel&gt;" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setFiledes" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;FieldModel&gt;" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getXml" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="addFiled" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="FieldModel" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getRelations" visibility="PUBLIC">
                                 <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
                             </uml:Operation>
@@ -114,32 +129,16 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="getFiledes" visibility="PUBLIC">
                                 <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="addFiled" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="FieldModel" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getInheritanceChain" visibility="PUBLIC">
+                                <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setFiledes" visibility="PUBLIC">
+                            <uml:Operation isLeaf="false" isStatic="false" name="setInheritanceChain" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;FieldModel&gt;" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setMethods" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;MethodModel&gt;" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="getXml" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;String&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setRelations" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="List&lt;RelationModel&gt;" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="addInterfacesImp" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setInterfacesImp" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;String&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="addConstructor" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
@@ -149,12 +148,13 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="List&lt;ConstructorModel&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setInheritanceChain" visibility="PUBLIC">
+                            <uml:Operation isLeaf="false" isStatic="false" name="setInterfacesImp" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="List&lt;String&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="getInheritanceChain" visibility="PUBLIC">
-                                <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="addInterfacesImp" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="ClassModel" xmi:type="uml:Operation"/>
                             <ownedOperation isConstructor="true" name="ClassModel" xmi:type="uml:Operation">
@@ -196,13 +196,13 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="getModifier" visibility="PUBLIC">
                                 <ownedParameter name="return" type="int" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setParameteeList" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;ParameterModel&gt;" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setModifier" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="int" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setParameteeList" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;ParameterModel&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="ConstructorModel" xmi:type="uml:Operation">
                                 <ownedParameter name="arg0" type="Constructor&lt;?&gt;" xmi:type="uml:Parameter"/>
@@ -261,10 +261,6 @@
                             <ownedAttribute isReadOnly="false" isStatic="false" name="genericType" visibility="PRIVATE" xmi:type="uml:Property">
                                 <type href="types.uml#String" xmi:type="uml:PrimitiveType"/>
                             </ownedAttribute>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setType" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getName" visibility="PUBLIC">
                                 <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
@@ -287,22 +283,30 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="getType" visibility="PUBLIC">
                                 <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setType" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setFinal" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="boolean" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setStatic" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="boolean" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="isMultiple" visibility="PUBLIC">
+                                <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getNiveauVisiblity" visibility="PUBLIC">
                                 <ownedParameter name="return" type="AccessModifier" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="isIterable" visibility="PUBLIC">
                                 <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setStatic" visibility="PUBLIC">
+                            <uml:Operation isLeaf="false" isStatic="false" name="setNiveauVisiblity" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="boolean" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setFinal" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="boolean" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="isMultiple" visibility="PUBLIC">
-                                <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="AccessModifier" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setGenericType" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
@@ -311,22 +315,18 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="getMultiplicity" visibility="PUBLIC">
                                 <ownedParameter name="return" type="Multiplicity" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setIterable" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="boolean" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setMultiplicity" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="Multiplicity" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setNiveauVisiblity" visibility="PUBLIC">
+                            <uml:Operation isLeaf="false" isStatic="false" name="setIterable" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="AccessModifier" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="boolean" xmi:type="uml:Parameter"/>
                             </uml:Operation>
+                            <ownedOperation isConstructor="true" name="FieldModel" xmi:type="uml:Operation"/>
                             <ownedOperation isConstructor="true" name="FieldModel" xmi:type="uml:Operation">
                                 <ownedParameter name="arg0" type="Field" xmi:type="uml:Parameter"/>
                             </ownedOperation>
-                            <ownedOperation isConstructor="true" name="FieldModel" xmi:type="uml:Operation"/>
                         </uml:Class>
                         <uml:Class name="InterfaceModel">
                             <ownedAttribute isReadOnly="false" isStatic="false" name="interfaceName" visibility="PRIVATE" xmi:type="uml:Property">
@@ -361,15 +361,15 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="List&lt;FieldModel&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setMethods" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;MethodModel&gt;" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getRelations" visibility="PUBLIC">
                                 <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getInterfaceName" visibility="PUBLIC">
                                 <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setMethods" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;MethodModel&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setRelations" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
@@ -434,34 +434,34 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="List&lt;ParameterModel&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setFinal" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="boolean" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setStatic" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="boolean" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getTypeReturn" visibility="PUBLIC">
                                 <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getVisibility" visibility="PUBLIC">
                                 <ownedParameter name="return" type="AccessModifier" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setStatic" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="boolean" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setFinal" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="boolean" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getModifier" visibility="PUBLIC">
+                                <ownedParameter name="return" type="int" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setVisibility" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="AccessModifier" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setTypeReturn" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="getModifier" visibility="PUBLIC">
-                                <ownedParameter name="return" type="int" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setModifier" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="int" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setTypeReturn" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="MethodModel" xmi:type="uml:Operation"/>
                             <ownedOperation isConstructor="true" name="MethodModel" xmi:type="uml:Operation">
@@ -481,27 +481,27 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="isMultiple" visibility="PUBLIC">
                                 <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="getLowerBound" visibility="PUBLIC">
-                                <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setUpperBound" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="isValidBound" visibility="PRIVATE">
                                 <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setLowerBound" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setUpperBound" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="isNumericMultiple" visibility="PRIVATE">
+                                <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getUpperBound" visibility="PUBLIC">
                                 <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="isNumericMultiple" visibility="PRIVATE">
-                                <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setLowerBound" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getLowerBound" visibility="PUBLIC">
+                                <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="Multiplicity" xmi:type="uml:Operation"/>
                             <ownedOperation isConstructor="true" name="Multiplicity" xmi:type="uml:Operation">
@@ -559,31 +559,27 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="getEnumerations" visibility="PUBLIC">
-                                <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setClasses" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;ClassModel&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getRelations" visibility="PUBLIC">
                                 <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setClasses" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;ClassModel&gt;" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getEnumerations" visibility="PUBLIC">
+                                <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setAnnotations" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="List&lt;AnnotationModel&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setPackages" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setEnumerations" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;Enumeration&gt;" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setRelations" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="List&lt;RelationModel&gt;" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setPackages" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="showRelarion" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
@@ -595,6 +591,10 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="setInterfaces" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="List&lt;InterfaceModel&gt;" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setEnumerations" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;Enumeration&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="PackageModel" xmi:type="uml:Operation">
                                 <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
@@ -608,10 +608,6 @@
                             <ownedAttribute isReadOnly="false" isStatic="false" name="type" visibility="PRIVATE" xmi:type="uml:Property">
                                 <type href="types.uml#String" xmi:type="uml:PrimitiveType"/>
                             </ownedAttribute>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setType" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getName" visibility="PUBLIC">
                                 <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
@@ -624,6 +620,10 @@
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getType" visibility="PUBLIC">
                                 <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setType" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="ParameterModel" xmi:type="uml:Operation"/>
                             <ownedOperation isConstructor="true" name="ParameterModel" xmi:type="uml:Operation">
@@ -674,10 +674,6 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setPackagesList" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setRelations" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="List&lt;RelationModel&gt;" xmi:type="uml:Parameter"/>
@@ -688,6 +684,10 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="setProjectModel" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="ProjectModel" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setPackagesList" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="ProjectModel" xmi:type="uml:Operation"/>
                             <ownedOperation isConstructor="true" name="ProjectModel" xmi:type="uml:Operation">
@@ -710,18 +710,14 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="toString" visibility="PUBLIC">
                                 <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="getTargetModel" visibility="PUBLIC">
-                                <ownedParameter name="return" type="Class" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getRelationType" visibility="PUBLIC">
                                 <ownedParameter name="return" type="RelationType" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getSourceModel" visibility="PUBLIC">
                                 <ownedParameter name="return" type="Class" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setTargetModel" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="Class&lt;?&gt;" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getTargetModel" visibility="PUBLIC">
+                                <ownedParameter name="return" type="Class" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="setSourceModel" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
@@ -730,6 +726,10 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="setRelationType" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="RelationType" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setTargetModel" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="Class&lt;?&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="RelationModel" xmi:type="uml:Operation">
                                 <ownedParameter name="arg0" type="Class&lt;?&gt;" xmi:type="uml:Parameter"/>
@@ -748,61 +748,61 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                         </uml:Interface>
-                        <packagedElement source="class org.mql.java.models.AnnotationModel" target="class java.lang.Class" xmi:id="01207d18-3e09-4c2a-ab15-64ec89dd84f2" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="429f0cfd-1e38-4419-995b-4a4a835ce503" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="ecd92a93-f822-49d4-afaa-8ac133adf89b" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="f372815e-acce-48ce-a908-f0f871986b36" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="d014b0eb-8f5c-4dd2-a7c1-00f0efbe8186" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="18d0028e-7176-444f-b2bf-15c35d5884ee" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="bee2f0cf-3f9d-4124-a9c3-9a3566e4f826" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="9cbe4a5d-08c1-4a1e-8439-644a30a84d95" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="85c13a3d-07e7-4d82-a674-2f9d3a2aa3e4" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.ClassModel" target="interface org.mql.java.models.ModelInterface" xmi:id="0d31ddb5-1f80-49a9-aefd-4a4c966bd90d" xmi:type="uml:REALIZATION"/>
-                        <packagedElement source="class org.mql.java.models.ConstructorModel" target="class java.lang.Class" xmi:id="57317809-98d1-4157-b907-8b3008f35879" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.ConstructorModel" target="class java.lang.Class" xmi:id="e0f217c9-a831-4e20-b62e-9dc700b63898" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.ConstructorModel" target="class java.lang.Class" xmi:id="104de591-743f-47f8-afd0-1414a61b80f6" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.ConstructorModel" target="class java.lang.Class" xmi:id="3e152abc-ca72-480d-a317-7ddb79ca93fe" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.Enumeration" target="class java.lang.Class" xmi:id="67442f64-17c9-4c8d-9256-7121646b9914" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.Enumeration" target="class java.lang.Class" xmi:id="ddb9a65f-ab92-4d03-8e97-fbcd3a756a64" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="d28d6ad6-87c1-4bf4-b3dc-059b41809ba8" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="2022842c-0e40-4db9-8a62-9c2b5ba25181" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="03bc8f53-e988-41fe-82e8-1c808bf6a39d" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="74266de6-48f6-47bb-8db5-54304469fb0c" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="07880bc7-b052-4b9d-9aeb-2c16ae858581" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="5d145b86-cd70-45ff-ba9f-9831998faf12" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="6192dcad-50ac-4b5c-851e-2f4a2ca7f480" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="interface org.mql.java.models.I" target="class java.lang.Class" xmi:id="f4308367-ed5f-4b3b-af2f-874a24d933f3" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="interface org.mql.java.models.I" target="interface org.mql.java.models.ModelInterface" xmi:id="5de5067f-b1cc-4c3a-81e4-dc5379075273" xmi:type="uml:REALIZATION"/>
-                        <packagedElement source="class org.mql.java.models.InterfaceModel" target="class java.lang.Class" xmi:id="918a8e20-c840-4835-91f2-c90c389770fb" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.InterfaceModel" target="class java.lang.Class" xmi:id="de07e30b-5c58-40d1-b260-b2939e921e76" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.InterfaceModel" target="class java.lang.Class" xmi:id="1ac4ecdc-f863-481d-bc4b-60661712729f" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.InterfaceModel" target="class java.lang.Class" xmi:id="2148a42c-4f50-401e-ace0-30d06e4b8094" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="747c3bfa-fadc-4223-b31f-0cce5e271b3a" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="b59929d1-4b7b-465f-b79e-746563c467dd" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="db69f860-7bfb-42f9-9f53-2bf0b1c29e54" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="6252a95d-56a6-467e-b226-e724a825138c" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="4a59e1ee-4490-43bd-bcfe-72faa5771f6b" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="b8ce15be-dcea-41a8-b1ac-ad2c53f9b361" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="c2a0fca2-aef9-4795-8905-4d17923a6605" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.Multiplicity" target="class java.lang.Class" xmi:id="93923cdc-0a6f-457c-aaef-7abbe21aa956" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.Multiplicity" target="class java.lang.Class" xmi:id="d761d36a-b6a5-49c0-9c4c-36705f999585" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="a17c1e77-8a4d-4171-8eb4-a264adb5166e" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="050a03a1-d6eb-4af2-ab40-0ffd395f0483" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="0b3ec71c-1a18-4754-afc9-357026cf3b7e" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="5efd8fcc-f2aa-4fe9-be27-11bd9565dcc4" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="1627a141-d3bf-4333-bce3-adc249220a27" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="98162eeb-eea4-4403-a462-f67401f21276" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="f7036ea9-661a-4a0a-8a46-b787f0f13dc8" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.ParameterModel" target="class java.lang.Class" xmi:id="12228d75-1418-4549-b80e-59e230220f26" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.ParameterModel" target="class java.lang.Class" xmi:id="ec231a1c-c117-49ce-a0a0-19a487d13270" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.ProjectModel" target="class java.lang.Class" xmi:id="898bf10b-79b1-4482-86fd-843d7172696d" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.ProjectModel" target="class java.lang.Class" xmi:id="c19177c1-94b1-41c9-858b-194ac42df036" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.ProjectModel" target="class java.lang.Class" xmi:id="760cde08-23d7-4a14-b4f0-98eb8a84d7cc" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.models.ProjectModel" target="class java.lang.Class" xmi:id="c9a27e15-5c39-4e23-acdb-51547b46df25" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.ProjectModel" target="class java.lang.Class" xmi:id="d1023edb-fc62-4aa1-be95-c8b1fbc5c4f5" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.RelationModel" target="class java.lang.Class" xmi:id="2085ac15-3745-40c6-be28-bc9ceb248348" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.RelationModel" target="class java.lang.Class" xmi:id="84ec81cc-5b32-4c83-ad6f-cacefb824651" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.models.RelationModel" target="class java.lang.Class" xmi:id="0752e88b-67eb-40d1-a3e2-4168894cbccf" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.AnnotationModel" target="class java.lang.Class" xmi:id="f62cc7b8-5520-46d0-bf58-96530494f795" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="59d65641-3e49-4028-a2ec-3e054be4db90" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="4e20fddb-f031-4703-b754-559ed7569c6d" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="b2c0ada1-cbf1-4de2-ad8d-e14dbb24e8ee" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="14ece08d-2ea3-400a-8680-eed7ab9367b0" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="d9ae8092-192c-44dc-9b99-39081c97d4e6" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="19ab3ed3-1d27-4209-bf09-cf2cec28459e" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="fa767a89-090a-4892-b2af-99e59042852c" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.ClassModel" target="class java.lang.Class" xmi:id="1cbd5d18-0965-4314-8c06-c8cc67f169aa" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.ClassModel" target="interface org.mql.java.models.ModelInterface" xmi:id="47dc9cd6-f669-499f-91c5-376213c63738" xmi:type="uml:REALIZATION"/>
+                        <packagedElement source="class org.mql.java.models.ConstructorModel" target="class java.lang.Class" xmi:id="240df9af-b08c-4324-8bf9-6528f115ef9d" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.ConstructorModel" target="class java.lang.Class" xmi:id="eb7aa74c-cac5-4ff2-bf53-a5e9bfb64db4" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.ConstructorModel" target="class java.lang.Class" xmi:id="76f9e10e-dd2a-462b-87e1-5860c7dbbdc3" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.ConstructorModel" target="class java.lang.Class" xmi:id="528eecfe-bb0e-4caf-9ee2-839d5608d76e" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.Enumeration" target="class java.lang.Class" xmi:id="63a7b686-8eab-4e14-94c2-738f5f1501e5" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.Enumeration" target="class java.lang.Class" xmi:id="70009c9f-33c4-4024-bc9b-1bc86eff13e2" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="21ac103a-90b4-4459-8f93-f89321e0fb3d" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="8d9b7b80-a7ab-4df0-a8eb-3690ba592864" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="a62fbf22-a4c8-4047-8148-f473625072b1" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="3d83c577-99df-43c6-bc13-2a9b0f9dab33" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="17940e65-a2a2-431c-9483-4621dd8a51f7" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="bbae4ef4-b8d5-4f07-8a99-64c736876a18" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.FieldModel" target="class java.lang.Class" xmi:id="283fb072-a4b8-4d1c-968e-8a260fb3287b" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="interface org.mql.java.models.I" target="class java.lang.Class" xmi:id="8f2f4ac5-da15-45ca-86f7-d181630f3286" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="interface org.mql.java.models.I" target="interface org.mql.java.models.ModelInterface" xmi:id="c253417e-f2f8-452e-bffd-69249ea7c267" xmi:type="uml:REALIZATION"/>
+                        <packagedElement source="class org.mql.java.models.InterfaceModel" target="class java.lang.Class" xmi:id="89f0f533-5af3-46d1-812a-1ae11d4503bf" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.InterfaceModel" target="class java.lang.Class" xmi:id="8ce20e2f-6eac-44ba-bd48-93b8c94f29cf" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.InterfaceModel" target="class java.lang.Class" xmi:id="bcf9c6e4-d384-4f91-846a-a0a7db621355" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.InterfaceModel" target="class java.lang.Class" xmi:id="730c2dd0-06ad-4954-b0bf-aab1809b9955" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="602f31b4-1fc0-4657-90fc-d8ee572bc8bc" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="afb8cf59-8172-411e-a576-484cd239aad5" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="eeaba140-5bb2-4e2b-93ed-e17d418cfa6f" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="fb6b5861-9c77-4514-8677-5986852d4c75" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="27e0547a-4216-4c35-9001-37bb2522ad09" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="f0cc9557-031a-46af-b9a2-61e8edcc8e8e" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.MethodModel" target="class java.lang.Class" xmi:id="04922c3a-afc0-44b7-9de3-375d745233ee" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.Multiplicity" target="class java.lang.Class" xmi:id="469925b1-f149-41ce-bcf5-68542fc62a3a" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.Multiplicity" target="class java.lang.Class" xmi:id="5136a2bd-807f-42ac-81af-1e9f05fc09a6" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="e6930d8f-5e9e-4355-86fa-88534ca90736" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="e859e9d0-8abb-4caa-abff-96a33dd04588" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="3a3eee56-a86e-49cc-be5b-ce7ea214b461" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="81abc7e4-60a2-40a7-8312-249633194dcb" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="ddc5e276-1d25-4aa2-bc08-98fcb44b1e64" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="86285b7a-fbeb-4d39-b1cb-6ee2b28f1080" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.PackageModel" target="class java.lang.Class" xmi:id="0c5deee8-999a-4691-a53b-57c472563a5d" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.ParameterModel" target="class java.lang.Class" xmi:id="7e201f27-7602-4c38-8783-548e75cb176b" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.ParameterModel" target="class java.lang.Class" xmi:id="7a610c01-f2fa-4934-a826-521223391f36" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.ProjectModel" target="class java.lang.Class" xmi:id="5630060c-7950-459c-823a-ef1aa5b23da6" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.ProjectModel" target="class java.lang.Class" xmi:id="e6b9d918-85fa-4a61-9ef0-0114445e13f7" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.ProjectModel" target="class java.lang.Class" xmi:id="a1ca883c-ab2a-45f3-84b2-be549347240d" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.models.ProjectModel" target="class java.lang.Class" xmi:id="e89d97be-e765-47b3-99fa-288730575f38" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.ProjectModel" target="class java.lang.Class" xmi:id="764051c0-bca7-4e8d-9918-0b2b78aa4677" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.RelationModel" target="class java.lang.Class" xmi:id="9618c6e1-0c6d-4aa7-a9c7-dc0fd6b7bbb0" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.RelationModel" target="class java.lang.Class" xmi:id="f5afb7b7-91bb-41ea-be09-a0a9c5b267d6" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.models.RelationModel" target="class java.lang.Class" xmi:id="a7798fe7-2158-4923-a654-9a897cf6d5f8" xmi:type="uml:ASSOCIATION"/>
                     </uml:Package>
                     <uml:Package name="org.mql.java.parsers">
                         <uml:Interface name="Parser">
@@ -852,13 +852,13 @@
                                 <uml:Operation isLeaf="false" isStatic="false" name="getClassModel" visibility="PUBLIC">
                                     <ownedParameter name="return" type="ClassModel" xmi:type="uml:Parameter"/>
                                 </uml:Operation>
-                                <uml:Operation isLeaf="false" isStatic="false" name="setClassModel" visibility="PUBLIC">
-                                    <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                    <ownedParameter name="arg0" type="ClassModel" xmi:type="uml:Parameter"/>
-                                </uml:Operation>
                                 <uml:Operation isLeaf="false" isStatic="false" name="setClassName" visibility="PUBLIC">
                                     <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                     <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
+                                </uml:Operation>
+                                <uml:Operation isLeaf="false" isStatic="false" name="setClassModel" visibility="PUBLIC">
+                                    <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                    <ownedParameter name="arg0" type="ClassModel" xmi:type="uml:Parameter"/>
                                 </uml:Operation>
                                 <ownedOperation isConstructor="true" name="ClassParser" xmi:type="uml:Operation">
                                     <ownedParameter name="arg0" type="Class&lt;?&gt;" xmi:type="uml:Parameter"/>
@@ -1006,12 +1006,12 @@
                                 <uml:Operation isLeaf="false" isStatic="false" name="getProject" visibility="PUBLIC">
                                     <ownedParameter name="return" type="ProjectModel" xmi:type="uml:Parameter"/>
                                 </uml:Operation>
+                                <uml:Operation isLeaf="false" isStatic="false" name="getProjectPath" visibility="PUBLIC">
+                                    <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
+                                </uml:Operation>
                                 <uml:Operation isLeaf="false" isStatic="false" name="getNameProject" visibility="PRIVATE">
                                     <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                                     <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
-                                </uml:Operation>
-                                <uml:Operation isLeaf="false" isStatic="false" name="getProjectPath" visibility="PUBLIC">
-                                    <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                                 </uml:Operation>
                                 <ownedOperation isConstructor="true" name="ProjectParser" xmi:type="uml:Operation">
                                     <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
@@ -1032,13 +1032,13 @@
                                 <uml:Operation isLeaf="false" isStatic="false" name="getRelations" visibility="PUBLIC">
                                     <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
                                 </uml:Operation>
-                                <uml:Operation isLeaf="false" isStatic="false" name="analyseClass" visibility="PRIVATE">
-                                    <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
-                                    <ownedParameter name="arg0" type="Class&lt;?&gt;" xmi:type="uml:Parameter"/>
-                                </uml:Operation>
                                 <uml:Operation isLeaf="false" isStatic="false" name="determineFieldRelationType" visibility="PRIVATE">
                                     <ownedParameter name="return" type="RelationType" xmi:type="uml:Parameter"/>
                                     <ownedParameter name="arg0" type="Field" xmi:type="uml:Parameter"/>
+                                </uml:Operation>
+                                <uml:Operation isLeaf="false" isStatic="false" name="analyseClass" visibility="PRIVATE">
+                                    <ownedParameter name="return" type="List" xmi:type="uml:Parameter"/>
+                                    <ownedParameter name="arg0" type="Class&lt;?&gt;" xmi:type="uml:Parameter"/>
                                 </uml:Operation>
                                 <ownedOperation isConstructor="true" name="RelationParser" xmi:type="uml:Operation">
                                     <ownedParameter name="arg0" type="Class&lt;?&gt;" xmi:type="uml:Parameter"/>
@@ -1061,57 +1061,57 @@
                                     <ownedParameter name="return" type="AnnotationModel" xmi:type="uml:Parameter"/>
                                     <ownedParameter name="arg0" type="Element" xmi:type="uml:Parameter"/>
                                 </uml:Operation>
-                                <uml:Operation isLeaf="false" isStatic="false" name="parseEnumeration" visibility="PRIVATE">
-                                    <ownedParameter name="return" type="Enumeration" xmi:type="uml:Parameter"/>
-                                    <ownedParameter name="arg0" type="Element" xmi:type="uml:Parameter"/>
-                                </uml:Operation>
-                                <uml:Operation isLeaf="false" isStatic="false" name="parsePackage" visibility="PRIVATE">
-                                    <ownedParameter name="return" type="PackageModel" xmi:type="uml:Parameter"/>
-                                    <ownedParameter name="arg0" type="Element" xmi:type="uml:Parameter"/>
-                                </uml:Operation>
-                                <uml:Operation isLeaf="false" isStatic="false" name="parseRelation" visibility="PRIVATE">
-                                    <ownedParameter name="return" type="RelationModel" xmi:type="uml:Parameter"/>
-                                    <ownedParameter name="arg0" type="Element" xmi:type="uml:Parameter"/>
-                                </uml:Operation>
-                                <uml:Operation isLeaf="false" isStatic="false" name="parseInterface" visibility="PRIVATE">
-                                    <ownedParameter name="return" type="InterfaceModel" xmi:type="uml:Parameter"/>
+                                <uml:Operation isLeaf="false" isStatic="false" name="parseClass" visibility="PRIVATE">
+                                    <ownedParameter name="return" type="ClassModel" xmi:type="uml:Parameter"/>
                                     <ownedParameter name="arg0" type="Element" xmi:type="uml:Parameter"/>
                                 </uml:Operation>
                                 <uml:Operation isLeaf="false" isStatic="false" name="parseConstructor" visibility="PRIVATE">
                                     <ownedParameter name="return" type="ConstructorModel" xmi:type="uml:Parameter"/>
                                     <ownedParameter name="arg0" type="Element" xmi:type="uml:Parameter"/>
                                 </uml:Operation>
-                                <uml:Operation isLeaf="false" isStatic="false" name="parseClass" visibility="PRIVATE">
-                                    <ownedParameter name="return" type="ClassModel" xmi:type="uml:Parameter"/>
+                                <uml:Operation isLeaf="false" isStatic="false" name="parsePackage" visibility="PRIVATE">
+                                    <ownedParameter name="return" type="PackageModel" xmi:type="uml:Parameter"/>
+                                    <ownedParameter name="arg0" type="Element" xmi:type="uml:Parameter"/>
+                                </uml:Operation>
+                                <uml:Operation isLeaf="false" isStatic="false" name="parseEnumeration" visibility="PRIVATE">
+                                    <ownedParameter name="return" type="Enumeration" xmi:type="uml:Parameter"/>
+                                    <ownedParameter name="arg0" type="Element" xmi:type="uml:Parameter"/>
+                                </uml:Operation>
+                                <uml:Operation isLeaf="false" isStatic="false" name="parseInterface" visibility="PRIVATE">
+                                    <ownedParameter name="return" type="InterfaceModel" xmi:type="uml:Parameter"/>
+                                    <ownedParameter name="arg0" type="Element" xmi:type="uml:Parameter"/>
+                                </uml:Operation>
+                                <uml:Operation isLeaf="false" isStatic="false" name="parseRelation" visibility="PRIVATE">
+                                    <ownedParameter name="return" type="RelationModel" xmi:type="uml:Parameter"/>
                                     <ownedParameter name="arg0" type="Element" xmi:type="uml:Parameter"/>
                                 </uml:Operation>
                                 <ownedOperation isConstructor="true" name="XMLParser" xmi:type="uml:Operation"/>
                             </uml:Class>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.AnnotationParser" target="class java.lang.Class" xmi:id="257f5a62-e610-4255-a3f0-d20e135871c2" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.AnnotationParser" target="class java.lang.Class" xmi:id="c33557ec-a84e-43d3-9dc6-283c551e527a" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.ClassParser" target="class java.lang.Class" xmi:id="d9a9c424-d3e6-4291-9060-37f5f878eae3" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.ClassParser" target="class java.lang.Class" xmi:id="eb4446af-c7e9-4dfe-bdba-89bf42bd06f7" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.EnumerationParser" target="class java.lang.Class" xmi:id="aeec3d5c-77c8-4dad-9d1f-4a44329f33ef" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.EnumerationParser" target="class java.lang.Class" xmi:id="65e7a56a-cd5c-4dac-88e1-e2e888d11f75" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.InterfaceParser" target="class java.lang.Class" xmi:id="4a586621-8f25-447e-a191-d53c4f5ee0dd" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="c7b095f6-6752-459e-80fb-ff5360a783e3" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="209a7e53-1c74-467e-b764-6fc3a6e8f4c6" xmi:type="uml:AGGREGATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="e7756f71-aa66-473b-a7a1-e0db50c5ce3f" xmi:type="uml:AGGREGATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="025d9ac6-1b4e-4edc-98f5-0f7bf4518044" xmi:type="uml:AGGREGATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="8db88f2f-8882-4e37-a229-edb994dc342a" xmi:type="uml:AGGREGATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="c2e1aaf9-435b-462c-87b0-16846452944e" xmi:type="uml:AGGREGATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="93571769-401e-4f97-bac0-a84c04119b48" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="ce9cd0bd-abb3-45f8-b635-a438a9116122" xmi:type="uml:AGGREGATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="7118b7cc-eeb1-48b3-a198-f82a2324ec4d" xmi:type="uml:AGGREGATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="d1431bf9-20eb-423d-8591-d4576f263d36" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="interface org.mql.java.parsers.Parser" xmi:id="8457d81f-bff0-4a15-9ac2-2bdac2ef2c9a" xmi:type="uml:REALIZATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.ProjectParser" target="class java.lang.Class" xmi:id="89c2a708-ec8a-4be3-be2a-07ab1bf0f9f9" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.ProjectParser" target="class java.lang.Class" xmi:id="7fbd101f-f41a-439c-982f-149db893fe9a" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.ProjectParser" target="class java.lang.Class" xmi:id="cabdc72c-62a4-4f8d-ba0f-fa616dbea37d" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.ProjectParser" target="class java.lang.Class" xmi:id="e135ded1-be83-4d26-bc26-211a56d5408b" xmi:type="uml:AGGREGATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.ProjectParser" target="interface org.mql.java.parsers.Parser" xmi:id="4425d2a7-bf13-485c-942d-74704d46f74b" xmi:type="uml:REALIZATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.RelationParser" target="class java.lang.Class" xmi:id="924b26cc-ba02-42bc-88e9-f16576c7459e" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.parserImp.RelationParser" target="class java.lang.Class" xmi:id="5dfe4405-6de9-4fea-9231-783a992afb1d" xmi:type="uml:AGGREGATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.AnnotationParser" target="class java.lang.Class" xmi:id="1807d6f9-4ff4-4739-9802-28e22377de04" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.AnnotationParser" target="class java.lang.Class" xmi:id="662ad79d-f5b0-4b20-ae9b-82e647e3d809" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.ClassParser" target="class java.lang.Class" xmi:id="788f48f4-0973-47f9-acdd-9f6de2faa157" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.ClassParser" target="class java.lang.Class" xmi:id="78095d20-d8ee-4ebc-b98a-571224b25082" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.EnumerationParser" target="class java.lang.Class" xmi:id="a8baa987-46ef-469a-8cc0-04f7d7fa69df" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.EnumerationParser" target="class java.lang.Class" xmi:id="4e227616-5a5c-4a94-9edf-103158ce9651" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.InterfaceParser" target="class java.lang.Class" xmi:id="de951ff5-7e72-4bc5-85df-5bd12cc79740" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="b3387950-5f6c-4c3a-8402-c01bbc1dff52" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="763873bf-03e5-4e3f-adf8-555c607b19dc" xmi:type="uml:AGGREGATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="db1e71e6-ecad-4b56-aac9-030ee3a679ab" xmi:type="uml:AGGREGATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="726812d9-6c5a-4a4e-a464-d9055d233a4d" xmi:type="uml:AGGREGATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="27428cba-d2e8-4740-b667-722d942ab533" xmi:type="uml:AGGREGATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="e41a7719-f30b-4666-958d-565e0edd2bf2" xmi:type="uml:AGGREGATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="18e7f8b2-21f9-4f7d-899f-c70d7a85236f" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="6684c76f-c0e5-4029-b8ff-c37e5fff8dc8" xmi:type="uml:AGGREGATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="57b35863-7408-4b9b-be30-0caed4f6bc2d" xmi:type="uml:AGGREGATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="class java.lang.Class" xmi:id="aa1e923c-ac2d-4100-a0f2-127d3196d2f0" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.PackageParser" target="interface org.mql.java.parsers.Parser" xmi:id="58e8234a-f0cd-4870-bf97-197dd5a0c1d6" xmi:type="uml:REALIZATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.ProjectParser" target="class java.lang.Class" xmi:id="d2ea63cd-191e-47e0-aa29-dc5e13d3ca8d" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.ProjectParser" target="class java.lang.Class" xmi:id="80f63637-24a9-4d36-bae0-707f32536244" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.ProjectParser" target="class java.lang.Class" xmi:id="b4da84e0-9468-49d9-bb1c-57954e514f3e" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.ProjectParser" target="class java.lang.Class" xmi:id="5a7d0ff3-fa09-4046-be89-916ac644d397" xmi:type="uml:AGGREGATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.ProjectParser" target="interface org.mql.java.parsers.Parser" xmi:id="8abec988-fe80-4cf9-b595-3617bd65661b" xmi:type="uml:REALIZATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.RelationParser" target="class java.lang.Class" xmi:id="c1da1b6b-a487-4ebd-a7b3-4ce8df0ad43b" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.parserImp.RelationParser" target="class java.lang.Class" xmi:id="2b6979f6-7875-43a4-9ad5-8a8225a47770" xmi:type="uml:AGGREGATION"/>
                         </uml:Package>
                         <uml:Package name="org.mql.java.parsers.xml">
                             <uml:Class name="XMLNode">
@@ -1165,8 +1165,8 @@
                                     <ownedParameter name="arg0" type="Node" xmi:type="uml:Parameter"/>
                                 </ownedOperation>
                             </uml:Class>
-                            <packagedElement source="class org.mql.java.parsers.xml.XMLNode" target="class java.lang.Class" xmi:id="956f6cbd-d279-4dc1-bead-d04eb35b78ce" xmi:type="uml:ASSOCIATION"/>
-                            <packagedElement source="class org.mql.java.parsers.xml.XMLNode" target="class java.lang.Class" xmi:id="59343a91-5c41-4478-b6fc-1ed5c788f097" xmi:type="uml:AGGREGATION"/>
+                            <packagedElement source="class org.mql.java.parsers.xml.XMLNode" target="class java.lang.Class" xmi:id="8db4b4f4-537d-4259-807b-6877804d8e79" xmi:type="uml:ASSOCIATION"/>
+                            <packagedElement source="class org.mql.java.parsers.xml.XMLNode" target="class java.lang.Class" xmi:id="700fc34e-50f7-4520-a34a-ab6fb30a3859" xmi:type="uml:AGGREGATION"/>
                         </uml:Package>
                     </uml:Package>
                     <uml:Package name="org.mql.java.tests">
@@ -1186,10 +1186,10 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="testIsAValidProject" visibility="PACKAGE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="testIsAValidClassFile" visibility="PACKAGE">
+                            <uml:Operation isLeaf="false" isStatic="false" name="testIsAValidPackage" visibility="PACKAGE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="testIsAValidPackage" visibility="PACKAGE">
+                            <uml:Operation isLeaf="false" isStatic="false" name="testIsAValidClassFile" visibility="PACKAGE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="FilesUtilsTest" xmi:type="uml:Operation"/>
@@ -1249,8 +1249,8 @@
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="TestXMLGenerator" xmi:type="uml:Operation"/>
                         </uml:Class>
-                        <packagedElement source="class org.mql.java.tests.FilesUtilsTest" target="class java.lang.Class" xmi:id="d49e9ad4-ff1e-477a-b9cf-721cd55a0164" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.tests.FilesUtilsTest" target="class java.lang.Class" xmi:id="d5e4644d-bb14-4e42-8d3d-4bf4bf872249" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.tests.FilesUtilsTest" target="class java.lang.Class" xmi:id="88052169-0b55-4c2f-b2a7-d04529c7f314" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.tests.FilesUtilsTest" target="class java.lang.Class" xmi:id="e802f726-ae80-4b2c-ba51-145796b458d2" xmi:type="uml:ASSOCIATION"/>
                     </uml:Package>
                     <uml:Package name="org.mql.java.ui">
                         <uml:Class name="ClassDesigner">
@@ -1260,22 +1260,22 @@
                             <ownedAttribute isReadOnly="false" isStatic="false" name="classModel" visibility="PRIVATE" xmi:type="uml:Property">
                                 <type href="types.uml#ClassModel" xmi:type="uml:PrimitiveType"/>
                             </ownedAttribute>
-                            <uml:Operation isLeaf="false" isStatic="false" name="getClassModel" visibility="PUBLIC">
-                                <ownedParameter name="return" type="ClassModel" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="drawClassTitle" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="drawAttributes" visibility="PRIVATE">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="JPanel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="drawMethods" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="JPanel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="drawAttributes" visibility="PRIVATE">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="JPanel" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="drawAttributesAndMethods" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getClassModel" visibility="PUBLIC">
+                                <ownedParameter name="return" type="ClassModel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="ClassDesigner" xmi:type="uml:Operation">
                                 <ownedParameter name="arg0" type="ClassModel" xmi:type="uml:Parameter"/>
@@ -1301,22 +1301,18 @@
                                 <type href="types.uml#List" xmi:type="uml:PrimitiveType"/>
                                 <upperValue value="*" xmi:type="uml:LiteralUnlimitedNatural"/>
                             </ownedAttribute>
-                            <uml:Operation isLeaf="false" isStatic="false" name="paintComponent" visibility="PROTECTED">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="Graphics" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="parse" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="paintComponent" visibility="PROTECTED">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="Graphics" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="true" name="displayClassDiagram" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="findCoordinates" visibility="PRIVATE">
-                                <ownedParameter name="return" type="Point" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="Class&lt;?&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="ClassDiagramUi" xmi:type="uml:Operation">
                                 <ownedParameter name="arg0" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
@@ -1329,10 +1325,10 @@
                             <ownedAttribute isReadOnly="false" isStatic="false" name="enumModel" visibility="PRIVATE" xmi:type="uml:Property">
                                 <type href="types.uml#Enumeration" xmi:type="uml:PrimitiveType"/>
                             </ownedAttribute>
-                            <uml:Operation isLeaf="false" isStatic="false" name="drawEnumTitle" visibility="PRIVATE">
+                            <uml:Operation isLeaf="false" isStatic="false" name="drawConstants" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="drawConstants" visibility="PRIVATE">
+                            <uml:Operation isLeaf="false" isStatic="false" name="drawEnumTitle" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="EnumerationDesigner" xmi:type="uml:Operation">
@@ -1346,13 +1342,6 @@
                             <ownedAttribute isReadOnly="false" isStatic="false" name="interfaceModel" visibility="PRIVATE" xmi:type="uml:Property">
                                 <type href="types.uml#InterfaceModel" xmi:type="uml:PrimitiveType"/>
                             </ownedAttribute>
-                            <uml:Operation isLeaf="false" isStatic="false" name="getInterfaceModel" visibility="PUBLIC">
-                                <ownedParameter name="return" type="InterfaceModel" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="drawAttributes" visibility="PRIVATE">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="JPanel" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="drawMethods" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="JPanel" xmi:type="uml:Parameter"/>
@@ -1360,8 +1349,15 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="drawInterfaceTitle" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="drawAttributes" visibility="PRIVATE">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="JPanel" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="drawAttributesAndMethods" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getInterfaceModel" visibility="PUBLIC">
+                                <ownedParameter name="return" type="InterfaceModel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="InterfaceDesigner" xmi:type="uml:Operation">
                                 <ownedParameter name="arg0" type="InterfaceModel" xmi:type="uml:Parameter"/>
@@ -1377,12 +1373,12 @@
                             <uml:Operation isLeaf="false" isStatic="false" name="getText" visibility="PUBLIC">
                                 <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="setUnderline" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="addText" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="String" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="setUnderline" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="LabelUi" xmi:type="uml:Operation"/>
                             <ownedOperation isConstructor="true" name="LabelUi" xmi:type="uml:Operation">
@@ -1402,6 +1398,9 @@
                             <ownedAttribute isReadOnly="false" isStatic="false" name="lineFromParent" visibility="PRIVATE" xmi:type="uml:Property">
                                 <type href="types.uml#Point" xmi:type="uml:PrimitiveType"/>
                             </ownedAttribute>
+                            <uml:Operation isLeaf="false" isStatic="false" name="drawData" visibility="PRIVATE">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="drawPackageTitle" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
@@ -1409,13 +1408,10 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="Point" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="drawPackage" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="getLineFromParent" visibility="PUBLIC">
                                 <ownedParameter name="return" type="Point" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="drawData" visibility="PRIVATE">
+                            <uml:Operation isLeaf="false" isStatic="false" name="drawPackage" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="PackageItem" xmi:type="uml:Operation">
@@ -1491,11 +1487,17 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="ActionEvent" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="showConsoleResultButtonAction" visibility="PRIVATE">
+                            <uml:Operation isLeaf="false" isStatic="false" name="createUI" visibility="PRIVATE">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="true" name="lambda$6" visibility="PRIVATE">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="showPackageDiagramButtonAction" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="ActionEvent" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="showPackageDiagramButtonAction" visibility="PRIVATE">
+                            <uml:Operation isLeaf="false" isStatic="false" name="showConsoleResultButtonAction" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="ActionEvent" xmi:type="uml:Parameter"/>
                             </uml:Operation>
@@ -1503,22 +1505,16 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="ActionEvent" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="createUI" visibility="PRIVATE">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="downloadXMLButtonAction" visibility="PRIVATE">
+                            <uml:Operation isLeaf="false" isStatic="false" name="downloadXMIButtonAction" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="ActionEvent" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="generateClassDiagram" visibility="PRIVATE">
                                 <ownedParameter name="return" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="downloadXMIButtonAction" visibility="PRIVATE">
+                            <uml:Operation isLeaf="false" isStatic="false" name="downloadXMLButtonAction" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="ActionEvent" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="true" name="lambda$6" visibility="PRIVATE">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="ProjectUploader" xmi:type="uml:Operation"/>
                         </uml:Class>
@@ -1538,13 +1534,13 @@
                             <ownedAttribute isReadOnly="false" isStatic="false" name="p2" visibility="PRIVATE" xmi:type="uml:Property">
                                 <type href="types.uml#Point" xmi:type="uml:PrimitiveType"/>
                             </ownedAttribute>
-                            <uml:Operation isLeaf="false" isStatic="false" name="paintComponent" visibility="PROTECTED">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="Graphics" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="move" visibility="PUBLIC">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="MouseEvent" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="paintComponent" visibility="PROTECTED">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="Graphics" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="drawRelation" visibility="PRIVATE">
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
@@ -1554,50 +1550,50 @@
                                 <ownedParameter name="arg1" type="ProjectUi" xmi:type="uml:Parameter"/>
                             </ownedOperation>
                         </uml:Class>
-                        <packagedElement source="class org.mql.java.ui.ClassDesigner" target="class java.lang.Class" xmi:id="db57b200-48d5-4dce-afbd-d1301ed8d5bc" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="class org.mql.java.ui.ClassDesigner" target="class java.lang.Class" xmi:id="45538ca5-3762-45e2-932d-b9ec9cf88525" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ClassDesigner" target="class javax.swing.JPanel" xmi:id="c1366f87-c3d6-476d-ac47-0abb5a37d96b" xmi:type="uml:GENERALIZATION"/>
-                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class java.lang.Class" xmi:id="3a127087-1a9f-4224-87ca-31f5dcf00ef2" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class java.lang.Class" xmi:id="0b4bf341-8dba-4785-baac-de03db1d861a" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class java.lang.Class" xmi:id="53c34bae-1001-4163-bb51-9d7e90483873" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class java.lang.Class" xmi:id="e32065ea-37dc-4465-98bb-9c0ad9bba19d" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class java.lang.Class" xmi:id="7bbdf99d-f486-4fca-8a03-2099e12230c2" xmi:type="uml:AGGREGATION"/>
-                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class javax.swing.JPanel" xmi:id="780cf473-2126-46bd-bb05-05a7d1d7819b" xmi:type="uml:GENERALIZATION"/>
-                        <packagedElement source="class org.mql.java.ui.EnumerationDesigner" target="class java.lang.Class" xmi:id="ac6b3bdb-d87f-4c02-9ece-e0cb77ea44ad" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="class org.mql.java.ui.EnumerationDesigner" target="class java.lang.Class" xmi:id="257cc4b3-d40a-43d2-a6fd-5045b6881f31" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.EnumerationDesigner" target="class javax.swing.JPanel" xmi:id="6010b624-1324-4df7-a878-c7d1fe52eb7b" xmi:type="uml:GENERALIZATION"/>
-                        <packagedElement source="class org.mql.java.ui.InterfaceDesigner" target="class java.lang.Class" xmi:id="41c09d2d-d275-4632-b00e-7e24d6367bbe" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="class org.mql.java.ui.InterfaceDesigner" target="class java.lang.Class" xmi:id="f6d8fd4d-afc1-458e-996f-fa194dd32497" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.InterfaceDesigner" target="class javax.swing.JPanel" xmi:id="3aedbfca-e20e-4c8c-9f08-57158a67e86c" xmi:type="uml:GENERALIZATION"/>
-                        <packagedElement source="class org.mql.java.ui.LabelUi" target="class java.lang.Class" xmi:id="bf00f757-6d57-4f8a-aaee-ac4a9997e550" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="class org.mql.java.ui.LabelUi" target="class java.lang.Class" xmi:id="add6f911-c880-44a3-b2ee-485711838e6b" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.LabelUi" target="class javax.swing.JPanel" xmi:id="d0c0a51e-e5ad-454d-962d-a609235696bc" xmi:type="uml:GENERALIZATION"/>
-                        <packagedElement source="class org.mql.java.ui.PackageItem" target="class java.lang.Class" xmi:id="5ba27ac9-d420-4dc3-8cfd-87d21fbbe94f" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="class org.mql.java.ui.PackageItem" target="class java.lang.Class" xmi:id="b9398e74-6672-4979-b113-548ce6d9ea42" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.PackageItem" target="class java.lang.Class" xmi:id="37f35ad0-c2b2-4d7a-9119-f500f4aa3ef9" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.PackageItem" target="class java.lang.Class" xmi:id="c6c61d6a-f8cf-4d70-8120-7021cbc9cbbc" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.PackageItem" target="class javax.swing.JPanel" xmi:id="c65089b2-be13-4e07-baf6-780703f2a181" xmi:type="uml:GENERALIZATION"/>
-                        <packagedElement source="class org.mql.java.ui.PackageUi" target="class java.lang.Class" xmi:id="225a8677-c9cb-46e4-be19-7a5dd1cfdbe2" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="class org.mql.java.ui.PackageUi" target="class javax.swing.JPanel" xmi:id="336d0a72-909a-4683-bbe1-585d4caf22fe" xmi:type="uml:GENERALIZATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="b3de278f-98d0-4625-ac14-b4c2ddd7b654" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="5065fd25-9c9e-4ae6-84ed-02e7f98be534" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="fbb48e0e-165b-42e1-ba9a-6e063f17cb5b" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="2e69c9bc-8c3f-42f9-bfe2-b37b1919d5cb" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="80ac76d1-017d-4292-96dc-24b04161a71f" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="5f685299-3177-41a5-b688-ce1336f14706" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="a2c7bad9-9b6a-405c-8c27-51e0c5999204" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="04a959a3-6e88-4363-ba28-2f5aa6657403" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="9a0ae972-153d-49ea-89dd-aca234348af0" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="f6fb3bf1-2990-4efe-a2f7-736732c4820c" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="01df3ae4-f388-43f0-8e55-6a03c16ca705" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="800b9a4e-e543-429e-89e7-be81b797ae6a" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class javax.swing.JFrame" xmi:id="e2aa2c7f-1100-4010-a996-a0c5ce3bab5e" xmi:type="uml:GENERALIZATION"/>
-                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class java.lang.Class" xmi:id="80e7ec70-a61c-4ab5-8fa9-0b27b7901f86" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class java.lang.Class" xmi:id="09ce9400-9456-4262-95bd-0c16e4480961" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class java.lang.Class" xmi:id="a2b249aa-cfda-4034-9a34-8c51b0c64629" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class java.lang.Class" xmi:id="ea29d2c5-f098-4549-b606-7e02d47ed2d2" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class java.lang.Class" xmi:id="b49984e1-7fd1-419c-842a-14fcbbf569b9" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class javax.swing.JPanel" xmi:id="52bd5207-750f-465b-b597-a4755adae4ed" xmi:type="uml:GENERALIZATION"/>
+                        <packagedElement source="class org.mql.java.ui.ClassDesigner" target="class java.lang.Class" xmi:id="bd982a8b-92e8-424b-a444-6bd81af17d84" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="class org.mql.java.ui.ClassDesigner" target="class java.lang.Class" xmi:id="c85f2364-d074-484b-9d82-70e1a05dc9d9" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ClassDesigner" target="class javax.swing.JPanel" xmi:id="6bacc92b-0024-4aa5-9f33-4064a827f969" xmi:type="uml:GENERALIZATION"/>
+                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class java.lang.Class" xmi:id="efa8a550-d6c9-436e-b978-3fa8e96994cd" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class java.lang.Class" xmi:id="84c418d3-9485-4678-a162-5531e098e32e" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class java.lang.Class" xmi:id="eff3c2d5-e7f0-4d0a-ac77-b846d3c19aa4" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class java.lang.Class" xmi:id="3d8e3d3e-d449-4a63-bc25-1c09f33cf39e" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class java.lang.Class" xmi:id="2a184c47-dfd2-410c-947b-b844ab22a47a" xmi:type="uml:AGGREGATION"/>
+                        <packagedElement source="class org.mql.java.ui.ClassDiagramUi" target="class javax.swing.JPanel" xmi:id="c3984f56-af07-4274-b4a4-802a7f9c72f4" xmi:type="uml:GENERALIZATION"/>
+                        <packagedElement source="class org.mql.java.ui.EnumerationDesigner" target="class java.lang.Class" xmi:id="0cf58cfa-1d9a-4172-b99b-9e3a9bbcb53e" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="class org.mql.java.ui.EnumerationDesigner" target="class java.lang.Class" xmi:id="be50053f-2f82-406b-a037-b526e3937f82" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.EnumerationDesigner" target="class javax.swing.JPanel" xmi:id="c04a5736-4feb-4e5e-8333-3a6d7ddd9814" xmi:type="uml:GENERALIZATION"/>
+                        <packagedElement source="class org.mql.java.ui.InterfaceDesigner" target="class java.lang.Class" xmi:id="ac65590d-ba7b-4085-bd6e-7b662fd5a08c" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="class org.mql.java.ui.InterfaceDesigner" target="class java.lang.Class" xmi:id="546e35cd-ed82-4628-9b1c-f3c3722ff2e9" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.InterfaceDesigner" target="class javax.swing.JPanel" xmi:id="4847832a-dad8-4767-a00f-9bc0b3dba34b" xmi:type="uml:GENERALIZATION"/>
+                        <packagedElement source="class org.mql.java.ui.LabelUi" target="class java.lang.Class" xmi:id="0be19b7e-bddd-419f-b9c2-6c0ece0d311b" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="class org.mql.java.ui.LabelUi" target="class java.lang.Class" xmi:id="7b03fa40-2c63-41f3-b3f5-5c719f787572" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.LabelUi" target="class javax.swing.JPanel" xmi:id="e1ba8556-1cc6-40b9-9411-8c1832c76e08" xmi:type="uml:GENERALIZATION"/>
+                        <packagedElement source="class org.mql.java.ui.PackageItem" target="class java.lang.Class" xmi:id="9af1a2fc-aa76-4b5f-9b73-0a6569f01571" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="class org.mql.java.ui.PackageItem" target="class java.lang.Class" xmi:id="cc04595e-0bc2-4fc9-a259-bd0680d67dca" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.PackageItem" target="class java.lang.Class" xmi:id="4774363b-9eed-462c-a8fb-dfa701e4a221" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.PackageItem" target="class java.lang.Class" xmi:id="6381d9be-712f-49be-93c9-4ec98c9592b2" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.PackageItem" target="class javax.swing.JPanel" xmi:id="949bedd8-1a1f-4b5d-8193-0865400efe9e" xmi:type="uml:GENERALIZATION"/>
+                        <packagedElement source="class org.mql.java.ui.PackageUi" target="class java.lang.Class" xmi:id="551d97ba-04b4-4949-932e-0456112cac55" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="class org.mql.java.ui.PackageUi" target="class javax.swing.JPanel" xmi:id="db801d2f-4c89-48ab-95fb-fc8b9e7e2840" xmi:type="uml:GENERALIZATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="207efb95-43c5-42f4-8368-6c0ba8e2be70" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="47712d2c-2f8b-4b7f-94e7-5ac58f3f6305" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="3a08f86f-c169-4084-bfb1-3bbf1133982f" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="32d1a310-5f1a-4f23-bcda-61da162eaffe" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="3524f312-bc47-4c38-aeda-0ff0746679db" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="0ed4e26c-80cf-4ac0-b3ea-6c70d6add7f1" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="43e5c5f6-a0af-4571-a25d-882a9eab0036" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="8eb6e908-69bd-497a-8de6-a2195bfb39ae" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="976252fe-20ff-493a-a423-090542557cf4" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="0fe3db11-0af0-4e83-b7d6-309933519526" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="dbb49235-ab28-4c0c-86ee-9c5b970319d8" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class java.lang.Class" xmi:id="9b02c767-0be6-4746-9d85-f6afaf9007bf" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.ProjectUploader" target="class javax.swing.JFrame" xmi:id="f19546ec-e10d-4814-ae77-d686a91d3d61" xmi:type="uml:GENERALIZATION"/>
+                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class java.lang.Class" xmi:id="0e84599c-ff16-41bf-90b8-30327f141e0d" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class java.lang.Class" xmi:id="4ea13a49-33c0-4c25-87bd-5d5eb0a055eb" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class java.lang.Class" xmi:id="627da6e3-f878-4bf2-b668-fe1e21637605" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class java.lang.Class" xmi:id="36e1726b-5328-4fe2-ad7a-21f93b434121" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class java.lang.Class" xmi:id="38f44e72-2426-4fbf-bda9-38df15b212e1" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.ui.RelationUi" target="class javax.swing.JPanel" xmi:id="c60d1168-22e0-44bc-83c2-486330d32b96" xmi:type="uml:GENERALIZATION"/>
                     </uml:Package>
                     <uml:Package name="org.mql.java.utils">
                         <uml:Class name="ClassesLoaderUtils">
@@ -1621,30 +1617,30 @@
                             <ownedAttribute isReadOnly="true" isStatic="false" name="classValidator" visibility="PRIVATE" xmi:type="uml:Property">
                                 <type href="types.uml#Validator" xmi:type="uml:PrimitiveType"/>
                             </ownedAttribute>
-                            <uml:Operation isLeaf="false" isStatic="false" name="isAValidProject" visibility="PUBLIC">
-                                <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="getAllPackages" visibility="PUBLIC">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="File" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="doesFileExist" visibility="PUBLIC">
-                                <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="File" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg1" type="Logger" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="List&lt;File&gt;" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="doesFileExist" visibility="PUBLIC">
                                 <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="Object" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="Object" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="getAllPackages" visibility="PUBLIC">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="doesFileExist" visibility="PUBLIC">
+                                <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="File" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg1" type="List&lt;File&gt;" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="Logger" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="isAValidClassFile" visibility="PUBLIC">
+                            <uml:Operation isLeaf="false" isStatic="false" name="isAValidProject" visibility="PUBLIC">
                                 <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="File" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="isAValidPackage" visibility="PUBLIC">
+                                <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="File" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="isAValidClassFile" visibility="PUBLIC">
                                 <ownedParameter name="return" type="boolean" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="File" xmi:type="uml:Parameter"/>
                             </uml:Operation>
@@ -1688,11 +1684,11 @@
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="VisibilityUtils" xmi:type="uml:Operation"/>
                         </uml:Class>
-                        <packagedElement source="class org.mql.java.utils.FilesUtils" target="class java.lang.Class" xmi:id="2458ecad-af66-4841-ad44-3a93f330bd8b" xmi:type="uml:COMPOSITION"/>
-                        <packagedElement source="class org.mql.java.utils.FilesUtils" target="class java.lang.Class" xmi:id="4c494d1f-4ed7-4c15-baec-ba0204b8b11c" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.utils.FilesUtils" target="class java.lang.Class" xmi:id="8ea400ec-9255-4d6b-9029-9d47ad6925ea" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.utils.FilesUtils" target="class java.lang.Class" xmi:id="a36cf0eb-9602-4b4d-9974-53ba3e7e20f5" xmi:type="uml:ASSOCIATION"/>
-                        <packagedElement source="class org.mql.java.utils.FilesUtils" target="interface org.mql.java.utils.validator.FileValidator" xmi:id="f98cbcef-f788-4e68-baf6-132b6fc1d767" xmi:type="uml:REALIZATION"/>
+                        <packagedElement source="class org.mql.java.utils.FilesUtils" target="class java.lang.Class" xmi:id="2a93f599-c69b-4ca8-9e1f-2826d9da7535" xmi:type="uml:COMPOSITION"/>
+                        <packagedElement source="class org.mql.java.utils.FilesUtils" target="class java.lang.Class" xmi:id="14ff3dd0-43fa-4870-bf82-fdaf1b1ad915" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.utils.FilesUtils" target="class java.lang.Class" xmi:id="733fadf2-7caa-4f4d-8d4f-885243fa6da1" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.utils.FilesUtils" target="class java.lang.Class" xmi:id="0ba42ab9-7192-41fc-8b3b-2625d85cc18f" xmi:type="uml:ASSOCIATION"/>
+                        <packagedElement source="class org.mql.java.utils.FilesUtils" target="interface org.mql.java.utils.validator.FileValidator" xmi:id="a13caabd-cc8d-43e2-bc35-63110c83157e" xmi:type="uml:REALIZATION"/>
                         <uml:Package name="org.mql.java.utils.validator">
                             <uml:Interface name="FileValidator">
                                 <uml:Operation isLeaf="false" isStatic="false" name="doesFileExist" visibility="PUBLIC">
@@ -1784,12 +1780,12 @@
                                     <implementedInterface name="org.mql.java.utils.validator.Validator"/>
                                     <implementedInterface name="org.mql.java.utils.validator.FileValidator"/>
                                 </uml:Class>
-                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.ClassValidator" target="interface org.mql.java.utils.validator.Validator" xmi:id="eabdc473-d2b1-40e8-a10e-3c5ddff729e3" xmi:type="uml:REALIZATION"/>
-                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.ClassValidator" target="interface org.mql.java.utils.validator.FileValidator" xmi:id="9646aa38-672d-4a6e-a19a-f2a314e8fe42" xmi:type="uml:REALIZATION"/>
-                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.PackageValidator" target="interface org.mql.java.utils.validator.Validator" xmi:id="54f1492d-56e9-4294-bb27-b1d4a7dafe98" xmi:type="uml:REALIZATION"/>
-                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.PackageValidator" target="interface org.mql.java.utils.validator.FileValidator" xmi:id="85e8d9ee-4312-4e86-97ac-8b00078d2d0f" xmi:type="uml:REALIZATION"/>
-                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.ProjectValidator" target="interface org.mql.java.utils.validator.Validator" xmi:id="9e62723a-9ce4-4bf7-8bf2-88148351d746" xmi:type="uml:REALIZATION"/>
-                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.ProjectValidator" target="interface org.mql.java.utils.validator.FileValidator" xmi:id="2cf7ead6-465b-407f-a2ba-ccef0581e06e" xmi:type="uml:REALIZATION"/>
+                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.ClassValidator" target="interface org.mql.java.utils.validator.Validator" xmi:id="f8b7f80a-ec75-4389-a9d3-1a5305b241f6" xmi:type="uml:REALIZATION"/>
+                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.ClassValidator" target="interface org.mql.java.utils.validator.FileValidator" xmi:id="eb3ac7ed-5b00-4fed-a0bf-ef1c9ba29c6e" xmi:type="uml:REALIZATION"/>
+                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.PackageValidator" target="interface org.mql.java.utils.validator.Validator" xmi:id="7d6ae451-c41d-4956-bf03-3f1a5d5cedf2" xmi:type="uml:REALIZATION"/>
+                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.PackageValidator" target="interface org.mql.java.utils.validator.FileValidator" xmi:id="0d1a5cad-306a-47c6-83dc-092c8dff6dae" xmi:type="uml:REALIZATION"/>
+                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.ProjectValidator" target="interface org.mql.java.utils.validator.Validator" xmi:id="ac349721-3715-423e-b835-9b9665860023" xmi:type="uml:REALIZATION"/>
+                                <packagedElement source="class org.mql.java.utils.validator.validatorImp.ProjectValidator" target="interface org.mql.java.utils.validator.FileValidator" xmi:id="40c157c2-a8f5-4b64-b712-126eef592079" xmi:type="uml:REALIZATION"/>
                             </uml:Package>
                         </uml:Package>
                     </uml:Package>
@@ -1804,17 +1800,6 @@
                                 <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="String" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="createPackageXMI" visibility="PRIVATE">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg1" type="Document" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg2" type="Element" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="createClassXMI" visibility="PRIVATE">
-                                <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg1" type="ClassModel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="createOperationXMI" visibility="PRIVATE">
                                 <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
@@ -1832,30 +1817,41 @@
                                 <ownedParameter name="arg1" type="String" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg2" type="String" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="createAttributeXMI" visibility="PRIVATE">
-                                <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg1" type="FieldModel" xmi:type="uml:Parameter"/>
+                            <uml:Operation isLeaf="false" isStatic="false" name="createPackageXMI" visibility="PRIVATE">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="Document" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg2" type="Element" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="createXmiRelation" visibility="PRIVATE">
                                 <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="RelationModel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="createAttributeXMI" visibility="PRIVATE">
+                                <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="FieldModel" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="createClassXMI" visibility="PRIVATE">
+                                <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="ClassModel" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="createConstructorOperationXMI" visibility="PRIVATE">
                                 <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="ConstructorModel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="createEnumerationXMI" visibility="PRIVATE">
-                                <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg1" type="Enumeration" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="createAnnotationXMI" visibility="PRIVATE">
                                 <ownedParameter name="return" type="Node" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="AnnotationModel" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="createEnumerationXMI" visibility="PRIVATE">
+                                <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="Enumeration" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="createEnumerationItemXMI" visibility="PRIVATE">
                                 <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
@@ -1875,10 +1871,26 @@
                                 <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="AnnotationModel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="createPackageList" visibility="PRIVATE">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="Document" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg2" type="Element" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="createFieldElement" visibility="PRIVATE">
                                 <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="FieldModel" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="saveDocument" visibility="PRIVATE">
+                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="String" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="createClass" visibility="PRIVATE">
+                                <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="ClassModel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="createInterface" visibility="PRIVATE">
                                 <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
@@ -1890,36 +1902,20 @@
                                 <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="Enumeration" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="createClass" visibility="PRIVATE">
-                                <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg1" type="ClassModel" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="saveDocument" visibility="PRIVATE">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg1" type="String" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="createPackageList" visibility="PRIVATE">
-                                <ownedParameter name="return" type="void" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="List&lt;PackageModel&gt;" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg1" type="Document" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg2" type="Element" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="createRelation" visibility="PRIVATE">
                                 <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="RelationModel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
-                            <uml:Operation isLeaf="false" isStatic="false" name="createMethodElement" visibility="PRIVATE">
-                                <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
-                                <ownedParameter name="arg1" type="MethodModel" xmi:type="uml:Parameter"/>
-                            </uml:Operation>
                             <uml:Operation isLeaf="false" isStatic="false" name="createConstructorElement" visibility="PRIVATE">
                                 <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
                                 <ownedParameter name="arg1" type="ConstructorModel" xmi:type="uml:Parameter"/>
+                            </uml:Operation>
+                            <uml:Operation isLeaf="false" isStatic="false" name="createMethodElement" visibility="PRIVATE">
+                                <ownedParameter name="return" type="Element" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg0" type="Document" xmi:type="uml:Parameter"/>
+                                <ownedParameter name="arg1" type="MethodModel" xmi:type="uml:Parameter"/>
                             </uml:Operation>
                             <ownedOperation isConstructor="true" name="XMLGenerator" xmi:type="uml:Operation"/>
                         </uml:Class>

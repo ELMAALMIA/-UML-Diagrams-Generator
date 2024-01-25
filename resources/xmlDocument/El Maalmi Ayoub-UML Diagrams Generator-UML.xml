@@ -51,27 +51,25 @@
                         <method isFinal="false" isStatic="false" name="setParent" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="String"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="getRelations" returnType="List" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="getInterfacesImp" returnType="List" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="getFiledes" returnType="List" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="addFiled" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="FieldModel"/>
+                        <method isFinal="false" isStatic="false" name="setMethods" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="List&lt;MethodModel&gt;"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="setFiledes" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;FieldModel&gt;"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="setMethods" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="List&lt;MethodModel&gt;"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="getXml" returnType="void" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="addFiled" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="FieldModel"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="getRelations" returnType="List" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getInterfacesImp" returnType="List" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getFiledes" returnType="List" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getInheritanceChain" returnType="List" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="setInheritanceChain" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="List&lt;String&gt;"/>
+                        </method>
                         <method isFinal="false" isStatic="false" name="setRelations" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;RelationModel&gt;"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="addInterfacesImp" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="String"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="setInterfacesImp" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="List&lt;String&gt;"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="addConstructor" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="ConstructorModel"/>
@@ -79,10 +77,12 @@
                         <method isFinal="false" isStatic="false" name="setConstructors" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;ConstructorModel&gt;"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="setInheritanceChain" returnType="void" visibility="PUBLIC">
+                        <method isFinal="false" isStatic="false" name="setInterfacesImp" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;String&gt;"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="getInheritanceChain" returnType="List" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="addInterfacesImp" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="String"/>
+                        </method>
                         <constructor name="ClassModel"/>
                         <constructor name="ClassModel">
                             <parameter name="arg0" type="Class&lt;?&gt;"/>
@@ -105,11 +105,11 @@
                         </method>
                         <method isFinal="false" isStatic="false" name="getParameterList" returnType="List" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="getModifier" returnType="int" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="setParameteeList" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="List&lt;ParameterModel&gt;"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="setModifier" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="int"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="setParameteeList" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="List&lt;ParameterModel&gt;"/>
                         </method>
                         <constructor name="ConstructorModel">
                             <parameter name="arg0" type="Constructor&lt;?&gt;"/>
@@ -144,9 +144,6 @@
                         <field isFinal="false" isStatic="false" multiplicity="" name="isFinal" type="boolean" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="multiplicity" type="Multiplicity" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="genericType" type="String" visibility="PRIVATE"/>
-                        <method isFinal="false" isStatic="false" name="setType" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="String"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="getName" returnType="String" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="toString" returnType="String" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="isFinal" returnType="boolean" visibility="PUBLIC"/>
@@ -156,32 +153,35 @@
                         </method>
                         <method isFinal="false" isStatic="false" name="getGenericType" returnType="String" visibility="PRIVATE"/>
                         <method isFinal="false" isStatic="false" name="getType" returnType="String" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="getNiveauVisiblity" returnType="AccessModifier" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="isIterable" returnType="boolean" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="setStatic" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="boolean"/>
+                        <method isFinal="false" isStatic="false" name="setType" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="String"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="setFinal" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="boolean"/>
                         </method>
+                        <method isFinal="false" isStatic="false" name="setStatic" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="boolean"/>
+                        </method>
                         <method isFinal="false" isStatic="false" name="isMultiple" returnType="boolean" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getNiveauVisiblity" returnType="AccessModifier" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="isIterable" returnType="boolean" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="setNiveauVisiblity" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="AccessModifier"/>
+                        </method>
                         <method isFinal="false" isStatic="false" name="setGenericType" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="String"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="getMultiplicity" returnType="Multiplicity" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="setIterable" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="boolean"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="setMultiplicity" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="Multiplicity"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="setNiveauVisiblity" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="AccessModifier"/>
+                        <method isFinal="false" isStatic="false" name="setIterable" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="boolean"/>
                         </method>
+                        <constructor name="FieldModel"/>
                         <constructor name="FieldModel">
                             <parameter name="arg0" type="Field"/>
                         </constructor>
-                        <constructor name="FieldModel"/>
                     </class>
                     <class name="InterfaceModel">
                         <parent>java.lang.Object</parent>
@@ -198,11 +198,11 @@
                         <method isFinal="false" isStatic="false" name="setFields" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;FieldModel&gt;"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="getRelations" returnType="List" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="getInterfaceName" returnType="String" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="setMethods" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;MethodModel&gt;"/>
                         </method>
+                        <method isFinal="false" isStatic="false" name="getRelations" returnType="List" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getInterfaceName" returnType="String" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="setRelations" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;RelationModel&gt;"/>
                         </method>
@@ -237,23 +237,23 @@
                         <method isFinal="false" isStatic="false" name="setParameters" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;ParameterModel&gt;"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="getTypeReturn" returnType="String" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="getVisibility" returnType="AccessModifier" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="setStatic" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="boolean"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="setFinal" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="boolean"/>
                         </method>
+                        <method isFinal="false" isStatic="false" name="setStatic" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="boolean"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="getTypeReturn" returnType="String" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getVisibility" returnType="AccessModifier" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getModifier" returnType="int" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="setVisibility" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="AccessModifier"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="setTypeReturn" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="String"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="getModifier" returnType="int" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="setModifier" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="int"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="setTypeReturn" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="String"/>
                         </method>
                         <constructor name="MethodModel"/>
                         <constructor name="MethodModel">
@@ -266,20 +266,20 @@
                         <field isFinal="false" isStatic="false" multiplicity="" name="upperBound" type="String" visibility="PRIVATE"/>
                         <method isFinal="false" isStatic="false" name="toString" returnType="String" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="isMultiple" returnType="boolean" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="getLowerBound" returnType="String" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="isValidBound" returnType="boolean" visibility="PRIVATE">
-                            <parameter name="arg0" type="String"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="setLowerBound" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="String"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="setUpperBound" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="String"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="getUpperBound" returnType="String" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="isValidBound" returnType="boolean" visibility="PRIVATE">
+                            <parameter name="arg0" type="String"/>
+                        </method>
                         <method isFinal="false" isStatic="false" name="isNumericMultiple" returnType="boolean" visibility="PRIVATE">
                             <parameter name="arg0" type="String"/>
                         </method>
+                        <method isFinal="false" isStatic="false" name="getUpperBound" returnType="String" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="setLowerBound" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="String"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="getLowerBound" returnType="String" visibility="PUBLIC"/>
                         <constructor name="Multiplicity"/>
                         <constructor name="Multiplicity">
                             <parameter name="arg0" type="String"/>
@@ -304,22 +304,19 @@
                         <method isFinal="false" isStatic="false" name="setName" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="String"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="getEnumerations" returnType="List" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="getRelations" returnType="List" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="setClasses" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;ClassModel&gt;"/>
                         </method>
+                        <method isFinal="false" isStatic="false" name="getRelations" returnType="List" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="getEnumerations" returnType="List" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="setAnnotations" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;AnnotationModel&gt;"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="setPackages" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="List&lt;PackageModel&gt;"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="setEnumerations" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="List&lt;Enumeration&gt;"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="setRelations" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;RelationModel&gt;"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="setPackages" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="List&lt;PackageModel&gt;"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="showRelarion" returnType="void" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="addRelation" returnType="void" visibility="PUBLIC">
@@ -327,6 +324,9 @@
                         </method>
                         <method isFinal="false" isStatic="false" name="setInterfaces" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;InterfaceModel&gt;"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="setEnumerations" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="List&lt;Enumeration&gt;"/>
                         </method>
                         <constructor name="PackageModel">
                             <parameter name="arg0" type="String"/>
@@ -337,15 +337,15 @@
                         <parent>java.lang.Object</parent>
                         <field isFinal="false" isStatic="false" multiplicity="" name="name" type="String" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="type" type="String" visibility="PRIVATE"/>
-                        <method isFinal="false" isStatic="false" name="setType" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="String"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="getName" returnType="String" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="toString" returnType="String" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="setName" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="String"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="getType" returnType="String" visibility="PUBLIC"/>
+                        <method isFinal="false" isStatic="false" name="setType" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="String"/>
+                        </method>
                         <constructor name="ParameterModel"/>
                         <constructor name="ParameterModel">
                             <parameter name="arg0" type="String"/>
@@ -372,15 +372,15 @@
                         <method isFinal="false" isStatic="false" name="setPath" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="String"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="setPackagesList" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="List&lt;PackageModel&gt;"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="setRelations" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="List&lt;RelationModel&gt;"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="getProjectModel" returnType="ProjectModel" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="setProjectModel" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="ProjectModel"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="setPackagesList" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="List&lt;PackageModel&gt;"/>
                         </method>
                         <constructor name="ProjectModel"/>
                         <constructor name="ProjectModel">
@@ -396,17 +396,17 @@
                         <field isFinal="false" isStatic="false" multiplicity="" name="targetModel" type="Class" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="relationType" type="RelationType" visibility="PRIVATE"/>
                         <method isFinal="false" isStatic="false" name="toString" returnType="String" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="getTargetModel" returnType="Class" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="getRelationType" returnType="RelationType" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="getSourceModel" returnType="Class" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="setTargetModel" returnType="void" visibility="PUBLIC">
-                            <parameter name="arg0" type="Class&lt;?&gt;"/>
-                        </method>
+                        <method isFinal="false" isStatic="false" name="getTargetModel" returnType="Class" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="setSourceModel" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="Class&lt;?&gt;"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="setRelationType" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="RelationType"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="setTargetModel" returnType="void" visibility="PUBLIC">
+                            <parameter name="arg0" type="Class&lt;?&gt;"/>
                         </method>
                         <constructor name="RelationModel">
                             <parameter name="arg0" type="Class&lt;?&gt;"/>
@@ -506,11 +506,11 @@
                             <method isFinal="false" isStatic="false" name="toString" returnType="String" visibility="PUBLIC"/>
                             <method isFinal="false" isStatic="false" name="getClassName" returnType="String" visibility="PUBLIC"/>
                             <method isFinal="false" isStatic="false" name="getClassModel" returnType="ClassModel" visibility="PUBLIC"/>
-                            <method isFinal="false" isStatic="false" name="setClassModel" returnType="void" visibility="PUBLIC">
-                                <parameter name="arg0" type="ClassModel"/>
-                            </method>
                             <method isFinal="false" isStatic="false" name="setClassName" returnType="void" visibility="PUBLIC">
                                 <parameter name="arg0" type="String"/>
+                            </method>
+                            <method isFinal="false" isStatic="false" name="setClassModel" returnType="void" visibility="PUBLIC">
+                                <parameter name="arg0" type="ClassModel"/>
                             </method>
                             <constructor name="ClassParser">
                                 <parameter name="arg0" type="Class&lt;?&gt;"/>
@@ -587,10 +587,10 @@
                             <field isFinal="false" isStatic="false" multiplicity="[]" name="list" type="List&lt;List&gt;" visibility="PACKAGE"/>
                             <method isFinal="false" isStatic="false" name="parse" returnType="void" visibility="PUBLIC"/>
                             <method isFinal="false" isStatic="false" name="getProject" returnType="ProjectModel" visibility="PUBLIC"/>
+                            <method isFinal="false" isStatic="false" name="getProjectPath" returnType="String" visibility="PUBLIC"/>
                             <method isFinal="false" isStatic="false" name="getNameProject" returnType="String" visibility="PRIVATE">
                                 <parameter name="arg0" type="String"/>
                             </method>
-                            <method isFinal="false" isStatic="false" name="getProjectPath" returnType="String" visibility="PUBLIC"/>
                             <constructor name="ProjectParser">
                                 <parameter name="arg0" type="String"/>
                             </constructor>
@@ -602,11 +602,11 @@
                             <field isFinal="false" isStatic="false" multiplicity="[]" name="relations" type="List&lt;List&gt;" visibility="PRIVATE"/>
                             <method isFinal="false" isStatic="false" name="toString" returnType="String" visibility="PUBLIC"/>
                             <method isFinal="false" isStatic="false" name="getRelations" returnType="List" visibility="PUBLIC"/>
-                            <method isFinal="false" isStatic="false" name="analyseClass" returnType="List" visibility="PRIVATE">
-                                <parameter name="arg0" type="Class&lt;?&gt;"/>
-                            </method>
                             <method isFinal="false" isStatic="false" name="determineFieldRelationType" returnType="RelationType" visibility="PRIVATE">
                                 <parameter name="arg0" type="Field"/>
+                            </method>
+                            <method isFinal="false" isStatic="false" name="analyseClass" returnType="List" visibility="PRIVATE">
+                                <parameter name="arg0" type="Class&lt;?&gt;"/>
                             </method>
                             <constructor name="RelationParser">
                                 <parameter name="arg0" type="Class&lt;?&gt;"/>
@@ -626,22 +626,22 @@
                             <method isFinal="false" isStatic="false" name="parseAnnotation" returnType="AnnotationModel" visibility="PRIVATE">
                                 <parameter name="arg0" type="Element"/>
                             </method>
-                            <method isFinal="false" isStatic="false" name="parseEnumeration" returnType="Enumeration" visibility="PRIVATE">
-                                <parameter name="arg0" type="Element"/>
-                            </method>
-                            <method isFinal="false" isStatic="false" name="parsePackage" returnType="PackageModel" visibility="PRIVATE">
-                                <parameter name="arg0" type="Element"/>
-                            </method>
-                            <method isFinal="false" isStatic="false" name="parseRelation" returnType="RelationModel" visibility="PRIVATE">
-                                <parameter name="arg0" type="Element"/>
-                            </method>
-                            <method isFinal="false" isStatic="false" name="parseInterface" returnType="InterfaceModel" visibility="PRIVATE">
+                            <method isFinal="false" isStatic="false" name="parseClass" returnType="ClassModel" visibility="PRIVATE">
                                 <parameter name="arg0" type="Element"/>
                             </method>
                             <method isFinal="false" isStatic="false" name="parseConstructor" returnType="ConstructorModel" visibility="PRIVATE">
                                 <parameter name="arg0" type="Element"/>
                             </method>
-                            <method isFinal="false" isStatic="false" name="parseClass" returnType="ClassModel" visibility="PRIVATE">
+                            <method isFinal="false" isStatic="false" name="parsePackage" returnType="PackageModel" visibility="PRIVATE">
+                                <parameter name="arg0" type="Element"/>
+                            </method>
+                            <method isFinal="false" isStatic="false" name="parseEnumeration" returnType="Enumeration" visibility="PRIVATE">
+                                <parameter name="arg0" type="Element"/>
+                            </method>
+                            <method isFinal="false" isStatic="false" name="parseInterface" returnType="InterfaceModel" visibility="PRIVATE">
+                                <parameter name="arg0" type="Element"/>
+                            </method>
+                            <method isFinal="false" isStatic="false" name="parseRelation" returnType="RelationModel" visibility="PRIVATE">
                                 <parameter name="arg0" type="Element"/>
                             </method>
                             <constructor name="XMLParser"/>
@@ -717,8 +717,8 @@
                         <method isFinal="false" isStatic="false" name="init" returnType="void" visibility="PACKAGE"/>
                         <method isFinal="false" isStatic="false" name="testGetAllPackages" returnType="void" visibility="PACKAGE"/>
                         <method isFinal="false" isStatic="false" name="testIsAValidProject" returnType="void" visibility="PACKAGE"/>
-                        <method isFinal="false" isStatic="false" name="testIsAValidClassFile" returnType="void" visibility="PACKAGE"/>
                         <method isFinal="false" isStatic="false" name="testIsAValidPackage" returnType="void" visibility="PACKAGE"/>
+                        <method isFinal="false" isStatic="false" name="testIsAValidClassFile" returnType="void" visibility="PACKAGE"/>
                         <constructor name="FilesUtilsTest"/>
                     </class>
                     <class name="ParseProjectTest">
@@ -773,15 +773,15 @@
                         <parent>javax.swing.JPanel</parent>
                         <field isFinal="true" isStatic="true" multiplicity="" name="serialVersionUID" type="long" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="classModel" type="ClassModel" visibility="PRIVATE"/>
-                        <method isFinal="false" isStatic="false" name="getClassModel" returnType="ClassModel" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="drawClassTitle" returnType="void" visibility="PRIVATE"/>
-                        <method isFinal="false" isStatic="false" name="drawAttributes" returnType="void" visibility="PRIVATE">
-                            <parameter name="arg0" type="JPanel"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="drawMethods" returnType="void" visibility="PRIVATE">
                             <parameter name="arg0" type="JPanel"/>
                         </method>
+                        <method isFinal="false" isStatic="false" name="drawAttributes" returnType="void" visibility="PRIVATE">
+                            <parameter name="arg0" type="JPanel"/>
+                        </method>
                         <method isFinal="false" isStatic="false" name="drawAttributesAndMethods" returnType="void" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="getClassModel" returnType="ClassModel" visibility="PUBLIC"/>
                         <constructor name="ClassDesigner">
                             <parameter name="arg0" type="ClassModel"/>
                         </constructor>
@@ -793,18 +793,15 @@
                         <field isFinal="false" isStatic="false" multiplicity="[]" name="interfaces" type="List&lt;List&gt;" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="[]" name="relations" type="List&lt;List&gt;" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="[]" name="enumerations" type="List&lt;List&gt;" visibility="PRIVATE"/>
-                        <method isFinal="false" isStatic="false" name="paintComponent" returnType="void" visibility="PROTECTED">
-                            <parameter name="arg0" type="Graphics"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="parse" returnType="void" visibility="PRIVATE">
                             <parameter name="arg0" type="List&lt;PackageModel&gt;"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="paintComponent" returnType="void" visibility="PROTECTED">
+                            <parameter name="arg0" type="Graphics"/>
                         </method>
                         <method isFinal="false" isStatic="true" name="displayClassDiagram" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="String"/>
                             <parameter name="arg1" type="List&lt;PackageModel&gt;"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="findCoordinates" returnType="Point" visibility="PRIVATE">
-                            <parameter name="arg0" type="Class&lt;?&gt;"/>
                         </method>
                         <constructor name="ClassDiagramUi">
                             <parameter name="arg0" type="List&lt;PackageModel&gt;"/>
@@ -814,8 +811,8 @@
                         <parent>javax.swing.JPanel</parent>
                         <field isFinal="true" isStatic="true" multiplicity="" name="serialVersionUID" type="long" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="enumModel" type="Enumeration" visibility="PRIVATE"/>
-                        <method isFinal="false" isStatic="false" name="drawEnumTitle" returnType="void" visibility="PRIVATE"/>
                         <method isFinal="false" isStatic="false" name="drawConstants" returnType="void" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="drawEnumTitle" returnType="void" visibility="PRIVATE"/>
                         <constructor name="EnumerationDesigner">
                             <parameter name="arg0" type="Enumeration"/>
                         </constructor>
@@ -824,15 +821,15 @@
                         <parent>javax.swing.JPanel</parent>
                         <field isFinal="true" isStatic="true" multiplicity="" name="serialVersionUID" type="long" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="interfaceModel" type="InterfaceModel" visibility="PRIVATE"/>
-                        <method isFinal="false" isStatic="false" name="getInterfaceModel" returnType="InterfaceModel" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="drawAttributes" returnType="void" visibility="PRIVATE">
-                            <parameter name="arg0" type="JPanel"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="drawMethods" returnType="void" visibility="PRIVATE">
                             <parameter name="arg0" type="JPanel"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="drawInterfaceTitle" returnType="void" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="drawAttributes" returnType="void" visibility="PRIVATE">
+                            <parameter name="arg0" type="JPanel"/>
+                        </method>
                         <method isFinal="false" isStatic="false" name="drawAttributesAndMethods" returnType="void" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="getInterfaceModel" returnType="InterfaceModel" visibility="PUBLIC"/>
                         <constructor name="InterfaceDesigner">
                             <parameter name="arg0" type="InterfaceModel"/>
                         </constructor>
@@ -842,10 +839,10 @@
                         <field isFinal="true" isStatic="true" multiplicity="" name="serialVersionUID" type="long" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="label" type="JLabel" visibility="PRIVATE"/>
                         <method isFinal="false" isStatic="false" name="getText" returnType="String" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="setUnderline" returnType="void" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="addText" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="String"/>
                         </method>
+                        <method isFinal="false" isStatic="false" name="setUnderline" returnType="void" visibility="PUBLIC"/>
                         <constructor name="LabelUi"/>
                         <constructor name="LabelUi">
                             <parameter name="arg0" type="String"/>
@@ -857,13 +854,13 @@
                         <field isFinal="false" isStatic="false" multiplicity="" name="pkg" type="PackageModel" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="packageName" type="String" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="lineFromParent" type="Point" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="drawData" returnType="void" visibility="PRIVATE"/>
                         <method isFinal="false" isStatic="false" name="drawPackageTitle" returnType="void" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="setLineFromParent" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="Point"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="drawPackage" returnType="void" visibility="PUBLIC"/>
                         <method isFinal="false" isStatic="false" name="getLineFromParent" returnType="Point" visibility="PUBLIC"/>
-                        <method isFinal="false" isStatic="false" name="drawData" returnType="void" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="drawPackage" returnType="void" visibility="PUBLIC"/>
                         <constructor name="PackageItem">
                             <parameter name="arg0" type="PackageModel"/>
                         </constructor>
@@ -909,24 +906,24 @@
                         <method isFinal="false" isStatic="false" name="uploadButtonAction" returnType="void" visibility="PRIVATE">
                             <parameter name="arg0" type="ActionEvent"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="showConsoleResultButtonAction" returnType="void" visibility="PRIVATE">
+                        <method isFinal="false" isStatic="false" name="createUI" returnType="void" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="true" name="lambda$6" returnType="void" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="showPackageDiagramButtonAction" returnType="void" visibility="PRIVATE">
                             <parameter name="arg0" type="ActionEvent"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="showPackageDiagramButtonAction" returnType="void" visibility="PRIVATE">
+                        <method isFinal="false" isStatic="false" name="showConsoleResultButtonAction" returnType="void" visibility="PRIVATE">
                             <parameter name="arg0" type="ActionEvent"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="showClassDiagramButtonAction" returnType="void" visibility="PRIVATE">
                             <parameter name="arg0" type="ActionEvent"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="createUI" returnType="void" visibility="PRIVATE"/>
-                        <method isFinal="false" isStatic="false" name="downloadXMLButtonAction" returnType="void" visibility="PRIVATE">
-                            <parameter name="arg0" type="ActionEvent"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="generateClassDiagram" returnType="String" visibility="PRIVATE"/>
                         <method isFinal="false" isStatic="false" name="downloadXMIButtonAction" returnType="void" visibility="PRIVATE">
                             <parameter name="arg0" type="ActionEvent"/>
                         </method>
-                        <method isFinal="false" isStatic="true" name="lambda$6" returnType="void" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="generateClassDiagram" returnType="String" visibility="PRIVATE"/>
+                        <method isFinal="false" isStatic="false" name="downloadXMLButtonAction" returnType="void" visibility="PRIVATE">
+                            <parameter name="arg0" type="ActionEvent"/>
+                        </method>
                         <constructor name="ProjectUploader"/>
                     </class>
                     <class name="RelationUi">
@@ -936,11 +933,11 @@
                         <field isFinal="false" isStatic="false" multiplicity="" name="projectUi" type="ProjectUi" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="p1" type="Point" visibility="PRIVATE"/>
                         <field isFinal="false" isStatic="false" multiplicity="" name="p2" type="Point" visibility="PRIVATE"/>
-                        <method isFinal="false" isStatic="false" name="paintComponent" returnType="void" visibility="PROTECTED">
-                            <parameter name="arg0" type="Graphics"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="move" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="MouseEvent"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="paintComponent" returnType="void" visibility="PROTECTED">
+                            <parameter name="arg0" type="Graphics"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="drawRelation" returnType="void" visibility="PRIVATE"/>
                         <constructor name="RelationUi">
@@ -1008,25 +1005,25 @@
                         <field isFinal="true" isStatic="false" multiplicity="" name="projectValidator" type="Validator" visibility="PRIVATE"/>
                         <field isFinal="true" isStatic="false" multiplicity="" name="packageValidator" type="Validator" visibility="PRIVATE"/>
                         <field isFinal="true" isStatic="false" multiplicity="" name="classValidator" type="Validator" visibility="PRIVATE"/>
-                        <method isFinal="false" isStatic="false" name="isAValidProject" returnType="boolean" visibility="PUBLIC">
+                        <method isFinal="false" isStatic="false" name="getAllPackages" returnType="void" visibility="PUBLIC">
                             <parameter name="arg0" type="File"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="doesFileExist" returnType="boolean" visibility="PUBLIC">
-                            <parameter name="arg0" type="File"/>
-                            <parameter name="arg1" type="Logger"/>
+                            <parameter name="arg1" type="List&lt;File&gt;"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="doesFileExist" returnType="boolean" visibility="PUBLIC">
                             <parameter name="arg0" type="Object"/>
                             <parameter name="arg1" type="Object"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="getAllPackages" returnType="void" visibility="PUBLIC">
+                        <method isFinal="false" isStatic="false" name="doesFileExist" returnType="boolean" visibility="PUBLIC">
                             <parameter name="arg0" type="File"/>
-                            <parameter name="arg1" type="List&lt;File&gt;"/>
+                            <parameter name="arg1" type="Logger"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="isAValidClassFile" returnType="boolean" visibility="PUBLIC">
+                        <method isFinal="false" isStatic="false" name="isAValidProject" returnType="boolean" visibility="PUBLIC">
                             <parameter name="arg0" type="File"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="isAValidPackage" returnType="boolean" visibility="PUBLIC">
+                            <parameter name="arg0" type="File"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="isAValidClassFile" returnType="boolean" visibility="PUBLIC">
                             <parameter name="arg0" type="File"/>
                         </method>
                         <constructor name="FilesUtils">
@@ -1173,15 +1170,6 @@
                             <parameter name="arg0" type="Document"/>
                             <parameter name="arg1" type="String"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="createPackageXMI" returnType="void" visibility="PRIVATE">
-                            <parameter name="arg0" type="List&lt;PackageModel&gt;"/>
-                            <parameter name="arg1" type="Document"/>
-                            <parameter name="arg2" type="Element"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="createClassXMI" returnType="Element" visibility="PRIVATE">
-                            <parameter name="arg0" type="Document"/>
-                            <parameter name="arg1" type="ClassModel"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="createOperationXMI" returnType="Element" visibility="PRIVATE">
                             <parameter name="arg0" type="Document"/>
                             <parameter name="arg1" type="MethodModel"/>
@@ -1195,25 +1183,34 @@
                             <parameter name="arg1" type="String"/>
                             <parameter name="arg2" type="String"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="createAttributeXMI" returnType="Element" visibility="PRIVATE">
-                            <parameter name="arg0" type="Document"/>
-                            <parameter name="arg1" type="FieldModel"/>
+                        <method isFinal="false" isStatic="false" name="createPackageXMI" returnType="void" visibility="PRIVATE">
+                            <parameter name="arg0" type="List&lt;PackageModel&gt;"/>
+                            <parameter name="arg1" type="Document"/>
+                            <parameter name="arg2" type="Element"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="createXmiRelation" returnType="Element" visibility="PRIVATE">
                             <parameter name="arg0" type="Document"/>
                             <parameter name="arg1" type="RelationModel"/>
                         </method>
+                        <method isFinal="false" isStatic="false" name="createAttributeXMI" returnType="Element" visibility="PRIVATE">
+                            <parameter name="arg0" type="Document"/>
+                            <parameter name="arg1" type="FieldModel"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="createClassXMI" returnType="Element" visibility="PRIVATE">
+                            <parameter name="arg0" type="Document"/>
+                            <parameter name="arg1" type="ClassModel"/>
+                        </method>
                         <method isFinal="false" isStatic="false" name="createConstructorOperationXMI" returnType="Element" visibility="PRIVATE">
                             <parameter name="arg0" type="Document"/>
                             <parameter name="arg1" type="ConstructorModel"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="createEnumerationXMI" returnType="Element" visibility="PRIVATE">
-                            <parameter name="arg0" type="Document"/>
-                            <parameter name="arg1" type="Enumeration"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="createAnnotationXMI" returnType="Node" visibility="PRIVATE">
                             <parameter name="arg0" type="Document"/>
                             <parameter name="arg1" type="AnnotationModel"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="createEnumerationXMI" returnType="Element" visibility="PRIVATE">
+                            <parameter name="arg0" type="Document"/>
+                            <parameter name="arg1" type="Enumeration"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="createEnumerationItemXMI" returnType="Element" visibility="PRIVATE">
                             <parameter name="arg0" type="Document"/>
@@ -1231,9 +1228,22 @@
                             <parameter name="arg0" type="Document"/>
                             <parameter name="arg1" type="AnnotationModel"/>
                         </method>
+                        <method isFinal="false" isStatic="false" name="createPackageList" returnType="void" visibility="PRIVATE">
+                            <parameter name="arg0" type="List&lt;PackageModel&gt;"/>
+                            <parameter name="arg1" type="Document"/>
+                            <parameter name="arg2" type="Element"/>
+                        </method>
                         <method isFinal="false" isStatic="false" name="createFieldElement" returnType="Element" visibility="PRIVATE">
                             <parameter name="arg0" type="Document"/>
                             <parameter name="arg1" type="FieldModel"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="saveDocument" returnType="void" visibility="PRIVATE">
+                            <parameter name="arg0" type="Document"/>
+                            <parameter name="arg1" type="String"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="createClass" returnType="Element" visibility="PRIVATE">
+                            <parameter name="arg0" type="Document"/>
+                            <parameter name="arg1" type="ClassModel"/>
                         </method>
                         <method isFinal="false" isStatic="false" name="createInterface" returnType="Element" visibility="PRIVATE">
                             <parameter name="arg0" type="Document"/>
@@ -1243,30 +1253,17 @@
                             <parameter name="arg0" type="Document"/>
                             <parameter name="arg1" type="Enumeration"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="createClass" returnType="Element" visibility="PRIVATE">
-                            <parameter name="arg0" type="Document"/>
-                            <parameter name="arg1" type="ClassModel"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="saveDocument" returnType="void" visibility="PRIVATE">
-                            <parameter name="arg0" type="Document"/>
-                            <parameter name="arg1" type="String"/>
-                        </method>
-                        <method isFinal="false" isStatic="false" name="createPackageList" returnType="void" visibility="PRIVATE">
-                            <parameter name="arg0" type="List&lt;PackageModel&gt;"/>
-                            <parameter name="arg1" type="Document"/>
-                            <parameter name="arg2" type="Element"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="createRelation" returnType="Element" visibility="PRIVATE">
                             <parameter name="arg0" type="Document"/>
                             <parameter name="arg1" type="RelationModel"/>
                         </method>
-                        <method isFinal="false" isStatic="false" name="createMethodElement" returnType="Element" visibility="PRIVATE">
-                            <parameter name="arg0" type="Document"/>
-                            <parameter name="arg1" type="MethodModel"/>
-                        </method>
                         <method isFinal="false" isStatic="false" name="createConstructorElement" returnType="Element" visibility="PRIVATE">
                             <parameter name="arg0" type="Document"/>
                             <parameter name="arg1" type="ConstructorModel"/>
+                        </method>
+                        <method isFinal="false" isStatic="false" name="createMethodElement" returnType="Element" visibility="PRIVATE">
+                            <parameter name="arg0" type="Document"/>
+                            <parameter name="arg1" type="MethodModel"/>
                         </method>
                         <constructor name="XMLGenerator"/>
                     </class>
